@@ -1,0 +1,29 @@
+<account-page-heading [heading]="'Account security'" />
+
+<form>
+  <security-setting-card
+    className="mb-3"
+    title="Activity Logs"
+    description="You can save your all activity logs including unusual activity detected."
+  />
+
+  <security-setting-card
+    className="mb-4"
+    title="Two factor authentication"
+    description="Secure your account with 2 Step security. When it is activated you will need to enter not only your password, but also a special code using app. You can receive this code by in mobile app."
+  />
+
+  <security-linked-account />
+</form>
+
+<div class="text-center my-5"><i class="bi bi-three-dots"></i></div>
+
+<div class="row g-lg-6">
+  <form class="col-md-6 col-lg-12 col-xl-6">
+    <security-social-media />
+  </form>
+
+  <form class="col-md-6 col-lg-12 col-xl-6">
+    <security-devices />
+  </form>
+</div>

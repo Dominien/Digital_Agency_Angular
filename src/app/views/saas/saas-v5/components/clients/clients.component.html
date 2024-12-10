@@ -1,0 +1,24 @@
+<section class="pt-0">
+  <div class="container text-center">
+    <p class="heading-color fw-semibold mb-4">
+      Used by the world best companies
+    </p>
+    <div class="swiper">
+      <swiper-container
+        class="swiper-wrapper align-items-center"
+        [config]="clientTestimonial"
+        init="false"
+      >
+        @for (item of clientsData; track $index) {
+          <swiper-slide class="swiper-slide">
+            <img
+              [src]="item.image"
+              class="grayscale px-sm-4 ps-0"
+              alt="client-img"
+            />
+          </swiper-slide>
+        }
+      </swiper-container>
+    </div>
+  </div>
+</section>

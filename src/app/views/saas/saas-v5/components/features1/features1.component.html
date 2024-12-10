@@ -1,0 +1,63 @@
+<section class="pt-0 overflow-hidden">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 position-relative pe-lg-7 order-2">
+        <!-- background shape -->
+        <figure class="position-absolute top-50 start-50 translate-middle">
+          <svg
+            class="fill-light"
+            width="451"
+            height="374"
+            viewBox="0 0 451 374"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M447.529 122.679C466.73 187.993 403.737 260.438 321.205 311.776C238.337 363.4 135.594 393.918 71.59 359.122C7.24919 324.326 -18.3524 224.501 13.9864 143.785C45.9884 63.069 136.268 1.46255 231.6 0.0364779C327.269 -1.67481 428.327 57.0795 447.529 122.679Z"
+            />
+          </svg>
+        </figure>
+
+        <!-- Images -->
+        <div class="row justify-content-center position-relative">
+          <div class="col-9">
+            <img
+              src="assets/images/elements/saas-decoration/decoration-2.png"
+              class="mb-4"
+              alt=""
+            />
+          </div>
+
+          <div class="col-5">
+            <img src="assets/images/elements/saas-decoration/17.png" alt="" />
+          </div>
+
+          <div class="col-5 me-auto">
+            <img
+              src="assets/images/elements/saas-decoration/16.png"
+              class="rounded-3 shadow"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 z-index-2 mb-6 mb-lg-0 order-1 order-lg-2">
+        <h2 class="mb-4 mb-lg-5">Powerful Features for Streamlined Success</h2>
+        <!-- Feature -->
+        <div class="row g-4 g-lg-5">
+          <!-- Item -->
+          @for (item of featuresData; track $index) {
+            <div class="col-sm-6">
+              <div class="icon-lg rounded-circle heading-color bg-light mb-3">
+                <i class="bi {{ item.icon }} fa-lg"></i>
+              </div>
+              <h6 class="mb-3">{{ item.title }}</h6>
+              <p class="mb-0">{{ item.description }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<sticky-header-component
+  [headerClass]="'header-sticky header-absolute'"
+  [mode]="'dark'"
+>
+  <app-horizontal-menu
+    ulClassName="mx-auto"
+    [showSignUp]="true"
+    [docShow]="true"
+    data-bs-theme="dark"
+  />
+</sticky-header-component>
+
+<main>
+  <servicev1-hero />
+
+  <services />
+
+  <servicev1-core-feature />
+
+  <servicev1-client />
+</main>
+
+<app-footer1 />

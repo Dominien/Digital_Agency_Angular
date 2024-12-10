@@ -1,0 +1,133 @@
+<section class="pt-0">
+  <div class="container">
+    <div
+      class="rounded-3 position-relative overflow-hidden p-4 p-md-6"
+      style="
+        background: url(assets/images/bg/05.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <!-- Bg overlay -->
+      <div class="bg-overlay bg-dark bg-opacity-75"></div>
+
+      <div class="row position-relative z-index-1">
+        <!-- List -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="d-flex flex-column h-100">
+            <ul class="list-group list-group-borderless mb-4">
+              <li
+                class="list-group-item text-white fs-5 fw-semibold d-flex p-0"
+              >
+                Innovate.
+              </li>
+              <li
+                class="list-group-item text-white fs-3 fw-semibold d-flex p-0"
+              >
+                Elevate.
+              </li>
+              <li
+                class="list-group-item text-white fs-2 fw-semibold d-flex p-0"
+              >
+                Succeed.
+              </li>
+            </ul>
+
+            <!-- Button -->
+            <div class="mt-auto">
+              <a
+                class="btn btn-lg btn-outline-white icon-link icon-link-hover"
+                href="javascript:void(0);"
+                >Join our community<i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="col-lg-8 col-xl-6 ms-auto">
+          <div class="card p-4 p-sm-5">
+            <!-- Card header -->
+            <div class="card-header bg-transparent p-0">
+              <h5>Here our customers experience</h5>
+            </div>
+
+            <!-- Card body -->
+            <div class="card-body p-0 pt-4">
+              <!-- Slider START -->
+              <div class="swiper">
+                <!-- Slider items -->
+                <swiper-container
+                  [config]="swiperConfig"
+                  init="false"
+                  class="swiper-wrapper pb-5"
+                >
+                  <!-- Testimonials item -->
+                  @for (data of testimonialData; track $index) {
+                    <swiper-slide class="swiper-slide">
+                      <!-- Rating star -->
+                      <ul class="list-inline mb-3">
+                        <ng-template #t let-fill="fill">
+                          <i class="bi bi-star-fill">
+                            @if (fill > 0) {
+                              <i
+                                class="bi bi-star-fill filled"
+                                [style.width.%]="fill"
+                              ></i>
+                            }
+                          </i>
+                        </ng-template>
+
+                        <ngb-rating
+                          [(rate)]="data.rating"
+                          [starTemplate]="t"
+                          [readonly]="true"
+                          [max]="5"
+                        />
+                      </ul>
+
+                      <q class="lead heading-color">{{ data.comment }}</q>
+
+                      <!-- Avatar and detail -->
+                      <div class="d-sm-flex align-items-center mt-4">
+                        <!-- Avatar -->
+                        <div class="avatar flex-shrink-0">
+                          <img
+                            class="avatar-img rounded-circle"
+                            [src]="data.user.avatar"
+                            alt="avatar"
+                          />
+                        </div>
+                        <!-- Info -->
+                        <div class="ms-sm-3 mt-2 mt-sm-0">
+                          <span class="heading-color fw-semibold mb-0"
+                            >{{ data.user.firstName }}
+                            {{ data.user.lastName }}</span
+                          >
+                          <p class="mb-0 small">
+                            {{ data.user.role }}
+                            @if (data.user.companyName) {
+                              of {{ data.user.companyName }}
+                            }
+                          </p>
+                        </div>
+                      </div>
+                    </swiper-slide>
+                  }
+                </swiper-container>
+
+                <!-- Slider Pagination -->
+                <div
+                  id="swiper-pagination"
+                  class="swiper-pagination position-absolute bottom-0"
+                ></div>
+              </div>
+              <!-- Slider END -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row END -->
+    </div>
+  </div>
+</section>

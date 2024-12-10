@@ -1,0 +1,32 @@
+<section class="pt-0">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4 g-lg-6">
+      <!-- Address info -->
+      @for (ticket of supportList; track $index) {
+        <div class="col">
+          <div class="card card-body card-hover-shadow border p-4">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex">
+                <!-- Icon -->
+                <h4 class="mb-0 text-primary">
+                  <i class="bi {{ ticket.icon }}"></i>
+                </h4>
+                <!-- Content -->
+                <div class="mx-3">
+                  <h6 class="mb-0">{{ ticket.title }}</h6>
+                  <small>{{ ticket.content }}</small>
+                </div>
+              </div>
+              <!-- Button -->
+              <a
+                class="icon-link icon-link-hover text-body stretched-link"
+                href="javascript:void(0);"
+                ><i class="bi bi-arrow-right fs-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

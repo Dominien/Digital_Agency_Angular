@@ -1,0 +1,43 @@
+<Section>
+  <div class="inner-container mx-auto text-center">
+    <span class="fs-1 fw-semibold text-primary">{{ currency }}3,058,886</span>
+    <h4 class="my-4 fw-semibold">Witness your business flourish and sparkle</h4>
+    <p class="w-75 mx-auto mb-4">
+      With our expert guidance and support, you can watch your business bloom
+      and glow, achieving new heights of success and radiating prosperity.
+    </p>
+    <a
+      class="btn btn-lg btn-dark icon-link icon-link-hover"
+      href="javascript:void(0);"
+      >Calculate growth<i class="bi bi-arrow-right"></i>
+    </a>
+
+    <!-- Clients -->
+    <div class="position-relative my-6 w-75 mx-auto">
+      <hr />
+      <p
+        class="position-absolute heading-color fw-semibold top-50 start-50 translate-middle bg-body px-4"
+      >
+        Our Investors
+      </p>
+    </div>
+
+    <!-- Slider START -->
+    <div class="swiper" data-swiper-options="">
+      <!-- Slider items -->
+      <swiper-container
+        class="swiper-wrapper align-items-center"
+        [config]="clientSwiper"
+        init="false"
+      >
+        <!-- Image -->
+        @for (item of clientData; track $index) {
+          <swiper-slide class="swiper-slide">
+            <img [src]="item.image" class="grayscale" alt="client-img" />
+          </swiper-slide>
+        }
+      </swiper-container>
+    </div>
+    <!-- Slider END -->
+  </div>
+</Section>

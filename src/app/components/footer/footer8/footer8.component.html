@@ -1,0 +1,122 @@
+<footer class="bg-dark pt-6" data-bs-theme="dark">
+  <div class="container position-relative mt-sm-5">
+    <!-- Footer Widgets -->
+    <div class="row g-4 justify-content-between">
+      <!-- Widget 1 START -->
+      <div class="col-lg-8 col-xl-7">
+        <div class="row g-4">
+          <!-- Link block -->
+          <div class="col-6 col-md-3">
+            <h6 class="mb-2 mb-md-4">Quick links</h6>
+            <ul class="nav flex-column">
+              @for (link of quickLinks; track $index; let first = $first) {
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    [ngClass]="{ 'pt-0': first }"
+                    routerLink="/about/v1"
+                    >{{ link.name }}
+                    @if (link.badge) {
+                      <span class="badge text-bg-danger ms-2">{{
+                        link.badge
+                      }}</span>
+                    }
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <!-- Link block -->
+          <div class="col-6 col-md-3">
+            <h6 class="mb-2 mb-md-4">Community</h6>
+            <ul class="nav flex-column">
+              @for (item of communityLinks; track $index; let first = $first) {
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    [ngClass]="{ 'pt-0': first }"
+                    href="javascript:void(0);"
+                    >{{ item.name }}
+                    @if (item.icon) {
+                      <i class="bi {{ item.icon }} small ms-2"></i>
+                    }
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <!-- Link block -->
+          <div class="col-md-6">
+            <h6 class="mb-2 mb-md-4">Contact details</h6>
+            <ul class="list-group list-group-borderless">
+              <li class="d-flex mb-3">
+                <i class="me-2 text-primary bi bi-geo-alt"></i
+                >{{ contactDetail.address }}
+              </li>
+              <li class="d-flex mb-3">
+                <i class="me-2 text-primary bi bi-headset"></i>
+                {{ contactDetail.contact }}
+              </li>
+              <li class="d-flex mb-3">
+                <i class="me-2 text-primary bi bi-envelope"></i>
+                {{ contactDetail.email }}
+              </li>
+              <li class="d-flex mb-3">
+                <i class="me-2 text-primary bi bi-clock"></i>
+                <p class="mb-0">
+                  {{ contactDetail.weekDays }} <br />{{
+                    contactDetail.weekEnds
+                  }}
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Widget 1 END -->
+
+      <!-- Widget 2 START -->
+      <div class="col-lg-3">
+        <h6 class="mb-2 mb-md-4">App available on</h6>
+        <div class="row g-2 mb-4 mb-sm-5">
+          <!-- Google play store button -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-6">
+            <a href="javascript:void(0);">
+              <img src="assets/images/elements/google-play.svg" alt="" />
+            </a>
+          </div>
+          <!-- App store button -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-6">
+            <a href="javascript:void(0);">
+              <img src="assets/images/elements/app-store.svg" alt="app-store" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Social buttons -->
+        <h6 class="mb-2 mb-md-4">Follow on</h6>
+
+        <ul class="list-inline mb-0 mt-3">
+          @for (item of socialMediaLinks; track $index) {
+            <li class="list-inline-item pe-1">
+              <a
+                class="btn btn-xs btn-icon {{ item.iconClassName }}"
+                href="javascript:void(0);"
+              >
+                <i class="fab fa-fw {{ item.icon }} lh-base"></i
+              ></a>
+            </li>
+          }
+        </ul>
+      </div>
+      <!-- Widget 2 END -->
+    </div>
+
+    <!-- Divider -->
+    <hr class="opacity-1 mt-4 mb-3" />
+
+    <footer-credit-with-logo />
+  </div>
+</footer>

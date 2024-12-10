@@ -1,0 +1,67 @@
+<section class="pt-md-0 pb-0">
+  <div class="container">
+    <div class="bg-primary position-relative rounded p-4 pt-sm-5 px-sm-5 mb-n9">
+      <span
+        class="display-4 heading-color position-absolute top-0 start-0 mt-n4 mt-md-n5 ms-4"
+        ><i class="bi bi-quote"></i
+      ></span>
+
+      <!-- Slider START -->
+      <div class="swiper overflow-hidden">
+        <!-- Slider items -->
+        <swiper-container
+          class="swiper-wrapper pb-7"
+          [config]="swiperConfig"
+          init="false"
+        >
+          <!-- Slider item -->
+          @for (item of testimonials; track $index) {
+            <swiper-slide class="swiper-slide">
+              <p class="fs-5 text-white mb-0">{{ item.comment }}</p>
+
+              <hr class="border-white my-5" />
+              <!-- Divider -->
+
+              <!-- Avatar and logo -->
+              <div class="d-sm-flex justify-content-between">
+                <!-- Avatar info -->
+                <div class="d-sm-flex align-items-center">
+                  <!-- Avatar -->
+                  <div class="avatar flex-shrink-0">
+                    <img
+                      class="avatar-img rounded-circle"
+                      [src]="item.user.avatar"
+                      alt="avatar"
+                    />
+                  </div>
+                  <!-- Info -->
+                  <div class="ms-sm-2 mt-2 mt-sm-0">
+                    <h6 class="text-white mb-0">
+                      {{ item.user.firstName }}{{ item.user.lastName }}
+                    </h6>
+                    <p class="mb-0 small text-white">
+                      Ceo and manager of Blogzine
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Logo -->
+                <img
+                  [src]="item.user.company?.image"
+                  class="h-40px mt-3 mt-sm-0"
+                  alt="Client logo"
+                />
+              </div>
+            </swiper-slide>
+          }
+        </swiper-container>
+
+        <!-- Slider Pagination -->
+        <div
+          class="swiper-pagination swiper-pagination-line position-absolute bottom-0 mb-3"
+        ></div>
+      </div>
+      <!-- Slider END -->
+    </div>
+  </div>
+</section>

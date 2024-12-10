@@ -1,0 +1,119 @@
+<account-page-heading heading="Order history" />
+
+<div class="card bg-transparent">
+  <!-- Card header -->
+  <div
+    class="card-header bg-transparent border-bottom d-flex justify-content-between align-items-center p-0 pb-3"
+  >
+    <h6 class="card-title mb-0">Your order</h6>
+    <div class="col-md-3 ms-auto">
+      <!-- Short by filter -->
+      <form>
+        <select class="form-select js-choice" aria-label=".form-select-sm">
+          <option>Sort by</option>
+          <option selected>All</option>
+          <option>Delivered</option>
+          <option>Processing</option>
+          <option>Cancelled</option>
+        </select>
+      </form>
+    </div>
+  </div>
+
+  <!-- Card body -->
+  <div class="card-body p-0 pt-5">
+    <!-- Product item START -->
+    @for (order of ordersList; track $index) {
+      <div class="row align-items-md-center">
+        <!-- Image -->
+        <div class="col-5 col-md-2">
+          <div class="bg-light p-2 rounded-2">
+            <img [src]="order.image" alt="" />
+          </div>
+        </div>
+
+        <div class="col-7 col-md-10">
+          <div class="row g-2 align-items-center">
+            <!-- Content -->
+            <div class="col-md-6 mb-3 mb-md-0">
+              <p class="heading-color fw-normal small mb-2">
+                Order no: <span class="text-primary">{{ order.orderNo }}</span>
+              </p>
+              <h6 class="mb-2">
+                <a href="javascript:void(0);">{{ order.name }}</a>
+              </h6>
+              <!-- List -->
+              <ul class="nav nav-divider small align-items-center">
+                @if (order.size) {
+                  <li class="nav-item">
+                    Size: <b>{{ order.size }}</b>
+                  </li>
+                }
+                <li class="nav-item">
+                  Shipped date: <b>{{ order.deliveryDate }}</b>
+                </li>
+              </ul>
+            </div>
+
+            @if (order.status == 'processing') {
+              <div class="col-md-3 mb-3 mb-md-0">
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-sm btn-light border mb-3"
+                  ><i class="bi bi-truck me-2"></i>Track order</a
+                >
+                <p class="text-primary fw-semibold small mb-0">
+                  <i class="bi bi-check-circle-fill me-1"></i>In Transit
+                </p>
+                <small class="text-body-secondary">Expected at NY,USA</small>
+              </div>
+            }
+
+            <!-- Price and button -->
+            <div
+              class="text-md-end ms-auto"
+              [ngClass]="order.status == 'processing' ? 'col-md-3' : 'col-md-4'"
+            >
+              <p
+                class="fw-semibold mb-1 mb-md-3"
+                [ngClass]="{
+                  'text-success': order.status == 'delivered',
+                  'text-danger': order.status == 'cancelled',
+                  'text-warning': order.status == 'processing',
+                }"
+              >
+                <i class="bi bi-check-circle-fill me-1"></i
+                >{{ order.status | sentenceCase }}
+              </p>
+              <small>Total amount</small>
+              <h5 class="mt-1 mb-0">
+                {{ currency }}{{ order.amount.toFixed(2) }}
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="my-5" />
+      <!-- Divider -->
+    }
+  </div>
+
+  <!-- Card footer -->
+  <div class="card-footer bg-transparent text-end p-0">
+    <!-- Pagination -->
+    <ul
+      class="pagination pagination-primary-soft list-unstyled d-flex justify-content-sm-end flex-wrap mb-0"
+    >
+      <ngb-pagination
+        [collectionSize]="25"
+        [ellipses]="true"
+        [maxSize]="2"
+        [page]="1"
+        [pageSize]="5"
+      >
+        <ng-template ngbPaginationPrevious>Prev</ng-template>
+        <ng-template ngbPaginationNext>Next</ng-template>
+      </ngb-pagination>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,247 @@
+<section class="pt-0">
+  <div class="container">
+    <!-- Title -->
+    <div class="inner-container-small text-center mb-4 mb-sm-6">
+      <h2 class="mb-3">Open Position</h2>
+      <p class="mb-0">
+        Our friendly team members are always willing to help you understand your
+        present technology requirements and provide suggestions on your future
+        needs.
+      </p>
+    </div>
+
+    <!-- List START -->
+    <div class="row g-4 g-lg-6">
+      <div class="col-lg-9 mx-auto">
+        <!-- Tabs -->
+        <ul
+          ngbNav
+          #nav="ngbNav"
+          class="nav nav-pills gap-1 nav-pills-light justify-content-center align-items-center mb-3 mb-sm-5"
+        >
+          <li class="nav-item">
+            <span class="pe-2">Browse by:</span>
+          </li>
+          <li ngbNavItem class="nav-item" role="presentation">
+            <button
+              ngbNavLink
+              class="nav-link show"
+              id="pills-all-tab"
+              type="button"
+            >
+              All jobs
+            </button>
+            <ng-template ngbNavContent>
+              <!-- Job item -->
+              @for (data of jobList; track $index) {
+                <div
+                  class="card card-body bg-light d-md-flex justify-content-md-between align-items-md-center flex-md-row p-4 mb-3"
+                >
+                  <div class="mb-4 mb-md-0">
+                    <!-- Badge -->
+                    <div class="badge text-bg-dark mb-3">
+                      {{ data.category }}
+                    </div>
+                    <!-- Title -->
+                    <h5 class="mb-0">
+                      <a routerLink="/career/single" class="stretched-link">{{
+                        data.name
+                      }}</a>
+                    </h5>
+
+                    <!-- List -->
+                    <div class="hstack gap-3 gap-sm-4 flex-wrap mt-3">
+                      <span
+                        ><i class="bi bi-geo-alt me-2"></i
+                        >{{ data.address }}</span
+                      >
+                      <span><i class="bi bi-clock me-2"></i>Full Time</span>
+                      <span
+                        ><i class="bi bi-briefcase me-2"></i>{{ currency
+                        }}{{ data.salary }}</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Button -->
+                  <div>
+                    <a href="javascript:void(0);" class="btn btn-primary mb-0"
+                      >Apply now<i class="bi bi-arrow-right ms-2"></i
+                    ></a>
+                  </div>
+                </div>
+              }
+            </ng-template>
+          </li>
+          <li ngbNavItem class="nav-item" role="presentation">
+            <button
+              ngbNavLink
+              class="nav-link"
+              id="pills-development-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-development"
+              type="button"
+              role="tab"
+              aria-controls="pills-development"
+              aria-selected="false"
+            >
+              Development
+            </button>
+            <ng-template ngbNavContent>
+              <!-- Job item -->
+              @for (data of jobList.slice(0, 2); track $index) {
+                <div
+                  class="card card-body bg-light d-md-flex justify-content-md-between align-items-md-center flex-md-row p-4 mb-3"
+                >
+                  <div class="mb-4 mb-md-0">
+                    <!-- Badge -->
+                    <div class="badge text-bg-dark mb-3">
+                      {{ data.category }}
+                    </div>
+                    <!-- Title -->
+                    <h5 class="mb-0">
+                      <a routerLink="/career/single" class="stretched-link">{{
+                        data.name
+                      }}</a>
+                    </h5>
+
+                    <!-- List -->
+                    <div class="hstack gap-3 gap-sm-4 flex-wrap mt-3">
+                      <span
+                        ><i class="bi bi-geo-alt me-2"></i
+                        >{{ data.address }}</span
+                      >
+                      <span><i class="bi bi-clock me-2"></i>Full Time</span>
+                      <span
+                        ><i class="bi bi-briefcase me-2"></i>{{ currency
+                        }}{{ data.salary }}</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Button -->
+                  <div>
+                    <a href="javascript:void(0);" class="btn btn-primary mb-0"
+                      >Apply now<i class="bi bi-arrow-right ms-2"></i
+                    ></a>
+                  </div>
+                </div>
+              }
+            </ng-template>
+          </li>
+          <li ngbNavItem class="nav-item" role="presentation">
+            <button
+              ngbNavLink
+              class="nav-link"
+              id="pills-hr-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-hr"
+              type="button"
+              role="tab"
+              aria-controls="pills-hr"
+              aria-selected="false"
+            >
+              HR
+            </button>
+            <ng-template ngbNavContent>
+              @for (data of jobList.slice(2, 4); track $index) {
+                <div
+                  class="card card-body bg-light d-md-flex justify-content-md-between align-items-md-center flex-md-row p-4 mb-3"
+                >
+                  <div class="mb-4 mb-md-0">
+                    <!-- Badge -->
+                    <div class="badge text-bg-dark mb-3">
+                      {{ data.category }}
+                    </div>
+                    <!-- Title -->
+                    <h5 class="mb-0">
+                      <a routerLink="/career/single" class="stretched-link">{{
+                        data.name
+                      }}</a>
+                    </h5>
+
+                    <!-- List -->
+                    <div class="hstack gap-3 gap-sm-4 flex-wrap mt-3">
+                      <span
+                        ><i class="bi bi-geo-alt me-2"></i
+                        >{{ data.address }}</span
+                      >
+                      <span><i class="bi bi-clock me-2"></i>Full Time</span>
+                      <span
+                        ><i class="bi bi-briefcase me-2"></i>{{ currency
+                        }}{{ data.salary }}</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Button -->
+                  <div>
+                    <a href="javascript:void(0);" class="btn btn-primary mb-0"
+                      >Apply now<i class="bi bi-arrow-right ms-2"></i
+                    ></a>
+                  </div>
+                </div>
+              }
+            </ng-template>
+          </li>
+          <li ngbNavItem class="nav-item" role="presentation">
+            <button
+              ngbNavLink
+              class="nav-link"
+              id="pills-marketing-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-marketing"
+              type="button"
+              role="tab"
+              aria-controls="pills-marketing"
+              aria-selected="false"
+            >
+              Marketing
+            </button>
+            <ng-template ngbNavContent>
+              <div class="text-center justify-content-center p-sm-4">
+                <span class="display-5 text-primary"
+                  ><i class="bi bi-slash-circle"></i
+                ></span>
+                <h5 class="mb-0 mt-2 mt-sm-4">
+                  There are no job openings available for this role.
+                </h5>
+              </div>
+            </ng-template>
+          </li>
+          <li ngbNavItem class="nav-item" role="presentation">
+            <button
+              ngbNavLink
+              class="nav-link"
+              id="pills-design-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-design"
+              type="button"
+              role="tab"
+              aria-controls="pills-design"
+              aria-selected="false"
+            >
+              Design
+            </button>
+            <ng-template ngbNavContent>
+              <div class="text-center justify-content-center p-sm-4">
+                <span class="display-5 text-primary"
+                  ><i class="bi bi-slash-circle"></i
+                ></span>
+                <h5 class="mb-0 mt-2 mt-sm-4">
+                  There are no job openings available for this role.
+                </h5>
+              </div>
+            </ng-template>
+          </li>
+        </ul>
+
+        <!-- Tab content START -->
+        <div
+          [ngbNavOutlet]="nav"
+          class="tab-content"
+          id="pills-tabContent"
+        ></div>
+        <!-- Tab content END -->
+      </div>
+    </div>
+    <!-- List END -->
+  </div>
+</section>

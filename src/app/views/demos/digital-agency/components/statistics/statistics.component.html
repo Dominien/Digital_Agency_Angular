@@ -1,0 +1,23 @@
+<section class="pb-0">
+  <div class="container">
+    <div class="row g-4 g-lg-5 justify-content-center">
+      <!-- Counter item -->
+      @for (item of statData; track $index) {
+        <div class="col-sm-6 col-md-4 text-center">
+          <div class="display-1 heading-color d-flex justify-content-center">
+            <span class="text-primary">{{ item?.prefix }}</span>
+            <span class="purecounter" [countUp]="item.stat">0</span>
+            @if ($index === 0) {
+              <span class="mb-0">{{ item.suffix }}</span>
+            } @else {
+              <span class="text-primary">{{ item.suffix }}</span>
+            }
+          </div>
+          <h6 class="text-body fw-normal position-relative">
+            {{ item.title }}
+          </h6>
+        </div>
+      }
+    </div>
+  </div>
+</section>

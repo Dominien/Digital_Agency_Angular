@@ -1,0 +1,49 @@
+<section class="pb-0">
+  <div class="container">
+    <div class="inner-container">
+      <!-- Title -->
+      <h2 class="text-center mb-4 mb-sm-5">Our leadership</h2>
+
+      <div
+        class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-0 justify-content-center"
+      >
+        <!-- Team item -->
+        @for (item of teamMembersData; track $index) {
+          <div class="col">
+            <div class="card card-body bg-transparent text-center p-4">
+              <!-- Image -->
+              <div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+                <img
+                  class="avatar-img rounded-circle"
+                  [src]="item.avatar"
+                  alt="avatar"
+                />
+              </div>
+
+              <!-- Content -->
+              <h6 class="mb-1">
+                <a href="javascript:void(0);"
+                  >{{ item.firstName }} {{ item.lastName }}</a
+                >
+              </h6>
+              <small>{{ item.role }}</small>
+
+              <!-- Social button -->
+              <ul class="list-inline mb-0 mt-3">
+                @for (data of item.socialLinks; track $index) {
+                  <li class="list-inline-item me-2 ms-1">
+                    <a
+                      class="btn btn-xs btn-icon btn-light"
+                      href="javascript:void(0);"
+                      ><i class="fab fa-fw {{ data.icon }} lh-base"></i
+                    ></a>
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

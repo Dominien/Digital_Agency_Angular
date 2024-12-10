@@ -1,0 +1,90 @@
+<Section class="pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-10 mx-auto">
+        <div class="rounded border bg-light p-4 p-lg-5">
+          <div class="row g-4">
+            <!-- Apple rating -->
+            <div class="col-md-4">
+              <div class="d-flex align-items-center">
+                <!-- Icon -->
+                <img
+                  src="assets/images/elements/apple.svg"
+                  class="icon-lg"
+                  alt=""
+                />
+
+                <!-- Content -->
+                <div class="ms-2">
+                  <!-- Rating -->
+                  <ul class="list-inline mb-0">
+                    <ng-template #t let-fill="fill">
+                      <i class="fas fa-star">
+                        @if (fill > 0) {
+                          <i
+                            class="fas fa-star filled"
+                            [style.width.%]="fill"
+                          ></i>
+                        }
+                      </i>
+                    </ng-template>
+                    <ngb-rating
+                      [rate]="4.5"
+                      [starTemplate]="t"
+                      [readonly]="true"
+                      [max]="5"
+                    />
+                  </ul>
+                  <span>4.8 stars on apple store</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Google rating -->
+            <div class="col-md-4 border-end">
+              <div class="d-flex align-items-center">
+                <!-- Icon -->
+                <img
+                  src="assets/images/elements/gicon.svg"
+                  class="icon-lg"
+                  alt=""
+                />
+
+                <!-- Content -->
+                <div class="ms-2">
+                  <!-- Rating -->
+                  <ul class="list-inline mb-0">
+                    <ng-template #t let-fill="fill">
+                      <i class="fas fa-star">
+                        @if (fill > 0) {
+                          <i
+                            class="fas fa-star filled"
+                            [style.width.%]="fill"
+                          ></i>
+                        }
+                      </i>
+                    </ng-template>
+                    <ngb-rating
+                      [rate]="4.5"
+                      [starTemplate]="t"
+                      [readonly]="true"
+                      [max]="5"
+                    />
+                  </ul>
+                  <span>4.8 stars on Google store</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <h6>8,000+ satisfied customers</h6>
+              <a class="icon-link icon-link-hover" href="javascript:void(0);"
+                >See all reviews<i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>

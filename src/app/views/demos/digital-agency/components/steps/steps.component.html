@@ -1,0 +1,24 @@
+<section>
+  <div class="container">
+    <!-- Title -->
+    <div class="inner-container-small text-center mb-4 mb-md-6">
+      <h2>How it works in <span class="text-primary">4</span> easy steps</h2>
+    </div>
+
+    <div class="row step-process">
+      <!-- Step item -->
+      @for (step of stepsData; track $index) {
+        <div class="col-sm-6 col-lg-3">
+          <div class="card card-body bg-transparent text-center">
+            <!-- Icon -->
+            <div class="icon-lg bg-dark text-white rounded-circle mb-3 mx-auto">
+              <i class="bi {{ step.icon }} fa-lg"></i>
+            </div>
+            <h5>{{ step.title }}</h5>
+            <p>{{ step.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

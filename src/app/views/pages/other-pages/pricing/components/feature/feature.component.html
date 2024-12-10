@@ -1,0 +1,249 @@
+<section class="pt-0">
+  <div class="container">
+    <div class="inner-container-small text-center mb-4 mb-sm-6">
+      <h2 class="mb-4">Features included in every plan</h2>
+      <p class="mb-0">
+        Our passion for customer excellence is just one reason why we are the
+        market leader. We've always worked very hard to give our customers the
+        best experience.
+      </p>
+    </div>
+
+    <!-- Feature item START -->
+    <div class="row g-4 g-lg-5">
+      <!-- Item -->
+      @for (data of featureList; track $index) {
+        <div class="col-md-4 text-center">
+          <div class="card card-body border bg-light">
+            <div class="icon-lg text-primary mx-auto mb-3">
+              <i class="bi {{ data.icon }} fa-xl"></i>
+            </div>
+            <h6>{{ data.title }}</h6>
+            <p>{{ data.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+    <!-- Feature item END -->
+
+    <!-- Table START -->
+    <div class="table-responsive-xl mt-5">
+      <table class="table table-border align-middle">
+        <!-- Head START -->
+        <thead class="align-top">
+          <tr>
+            <th scope="col"></th>
+
+            <th scope="col">
+              <div class="text-center p-3">
+                <span class="mb-3 heading-color">Basic plan</span>
+                <p class="mb-3">
+                  <span
+                    class="h2 mb-0 plan-price"
+                    data-monthly-price="$25"
+                    data-annual-price="$20"
+                    >$25</span
+                  >
+                  /month
+                </p>
+                <a href="javascript:void(0);" class="btn btn-sm btn-dark mb-0"
+                  >Get started</a
+                >
+              </div>
+            </th>
+
+            <th scope="col">
+              <div class="text-center p-3">
+                <span class="mb-3 heading-color">Standard plan</span>
+                <p class="mb-3">
+                  <span
+                    class="h2 mb-0 plan-price"
+                    data-monthly-price="$56"
+                    data-annual-price="$45"
+                    >$56</span
+                  >
+                  /month
+                </p>
+                <a href="javascript:void(0);" class="btn btn-sm btn-dark mb-0"
+                  >Get started</a
+                >
+              </div>
+            </th>
+
+            <th scope="col">
+              <div class="text-center p-3">
+                <span class="mb-3 heading-color">Basic plan</span>
+                <p class="mb-3">
+                  <span
+                    class="h2 mb-0 plan-price"
+                    data-monthly-price="$99"
+                    data-annual-price="$145"
+                    >$99</span
+                  >
+                  /month
+                </p>
+                <a href="javascript:void(0);" class="btn btn-sm btn-dark mb-0"
+                  >Get started</a
+                >
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <!-- Head END -->
+
+        <!-- Body START -->
+        <tbody class="border-top-0">
+          <!-- Item -->
+          <tr>
+            <th scope="row">
+              <span class="fw-normal heading-color ps-lg-4 mb-0"
+                >Storage space</span
+              >
+            </th>
+            <td class="text-center">40GB</td>
+            <td class="text-center">60GB</td>
+            <td class="text-center">Unlimited</td>
+          </tr>
+
+          <!-- Item -->
+          <tr>
+            <th scope="row">
+              <span class="fw-normal heading-color ps-lg-4 mb-0"
+                >Cloud connected</span
+              >
+            </th>
+            <td class="text-center">Yes</td>
+            <td class="text-center">Yes</td>
+            <td class="text-center">Yes</td>
+          </tr>
+
+          <!-- Item -->
+          <tr>
+            <th scope="row">
+              <span class="fw-normal heading-color ps-lg-4 mb-0"
+                >Coding tools</span
+              >
+            </th>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+          </tr>
+
+          <!-- Item -->
+          <tr>
+            <th scope="row">
+              <span class="fw-normal heading-color ps-lg-4 mb-0"
+                >Advance debugging</span
+              >
+            </th>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+          </tr>
+
+          <!-- Item -->
+          <tr>
+            <th scope="row">
+              <span class="fw-normal heading-color ps-lg-4 mb-0"
+                >Mobile apps</span
+              >
+            </th>
+            <td class="text-center text-danger">
+              <i class="bi bi-x-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+          </tr>
+
+          <!-- Item -->
+          <tr>
+            <th scope="row">
+              <span class="fw-normal heading-color ps-lg-4 mb-0"
+                >Web tools</span
+              >
+            </th>
+            <td class="text-center text-danger">
+              <i class="bi bi-x-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+          </tr>
+
+          <!-- Item -->
+          <tr>
+            <th scope="row">
+              <span class="fw-normal heading-color ps-lg-4 mb-0"
+                >Version control</span
+              >
+            </th>
+            <td class="text-center text-danger">
+              <i class="bi bi-x-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+          </tr>
+
+          <!-- Item -->
+          <tr>
+            <th scope="row">
+              <span class="fw-normal heading-color ps-lg-4 mb-0">Security</span>
+            </th>
+            <td class="text-center text-danger">
+              <i class="bi bi-x-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-danger">
+              <i class="bi bi-x-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+          </tr>
+
+          <!-- Item -->
+          <tr>
+            <th scope="row">
+              <span class="fw-normal heading-color ps-lg-4 mb-0"
+                >Team access</span
+              >
+            </th>
+            <td class="text-center text-danger">
+              <i class="bi bi-x-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-danger">
+              <i class="bi bi-x-circle fa-lg"></i>
+            </td>
+            <td class="text-center text-primary">
+              <i class="bi bi-check-circle fa-lg"></i>
+            </td>
+          </tr>
+        </tbody>
+        <!-- Body END -->
+      </table>
+    </div>
+    <!-- Table END -->
+  </div>
+</section>

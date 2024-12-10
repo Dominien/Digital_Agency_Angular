@@ -1,0 +1,71 @@
+<Section class="pb-0">
+  <div class="container">
+    <div class="bg-light rounded position-relative p-4 p-sm-7 overflow-hidden">
+      <!-- Decoration -->
+      <figure
+        class="position-absolute top-100 start-100 translate-middle mt-n8 ms-n5"
+      >
+        <svg
+          class="text-primary opacity-2"
+          width="510"
+          height="500"
+          viewBox="0 0 510 500"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M309.5 317.5C309.5 377.619 259.646 426.375 198.125 426.375C136.604 426.375 86.75 377.619 86.75 317.5C86.75 257.381 136.604 208.625 198.125 208.625C259.646 208.625 309.5 257.381 309.5 317.5Z"
+            stroke="currentColor"
+          />
+          <path
+            d="M380.125 300C380.125 391.185 304.389 465.125 210.938 465.125C117.486 465.125 41.75 391.185 41.75 300C41.75 208.815 117.486 134.875 210.938 134.875C304.389 134.875 380.125 208.815 380.125 300Z"
+            stroke="currentColor"
+          />
+          <path
+            d="M508.875 250C508.875 387.786 395.08 499.5 254.688 499.5C114.295 499.5 0.5 387.786 0.5 250C0.5 112.214 114.295 0.5 254.688 0.5C395.08 0.5 508.875 112.214 508.875 250Z"
+            stroke="currentColor"
+          />
+        </svg>
+      </figure>
+
+      <div class="row position-relative">
+        <!-- Feature list -->
+        <div class="col-lg-6 h-100 order-2">
+          <!-- Features -->
+          <div class="row g-4 g-lg-6">
+            <!-- Item -->
+            @for (item of workflowSteps; track $index) {
+              <div class="col-sm-6">
+                <!-- Icon -->
+                <div
+                  class="icon-lg bg-body heading-color border rounded-circle mb-3"
+                >
+                  <i class="bi {{ item.icon }} fa-lg"></i>
+                </div>
+                <h6>{{ item.title }}</h6>
+                <p class="mb-0">{{ item.description }}</p>
+              </div>
+            }
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-5 ms-auto order-1 order-lg-2 mb-6 mb-lg-0">
+          <div class="h-100 d-flex flex-column">
+            <h2 class="mb-4">Choose us for your financial journey</h2>
+            <!-- Button -->
+            <lightgallery [settings]="setting" class="mt-auto">
+              <a
+                class="btn btn-primary"
+                href="https://www.youtube.com/embed/tXHviS-4ygo"
+                data-glightbox=""
+                data-gallery="course-video"
+                ><i class="bi bi-play-fill fa-xl me-2"></i>Watch demo video</a
+              >
+            </lightgallery>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>

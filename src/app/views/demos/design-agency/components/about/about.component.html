@@ -1,0 +1,114 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-11 mx-auto">
+        <div class="row g-4 g-lg-6">
+          <!-- Title content -->
+          <div class="col-xl-5">
+            <h3>
+              We're a dynamic, innovative digital agency rooted in the vibrant
+              heart of <span class="text-primary">California</span>
+            </h3>
+          </div>
+
+          <!-- Years content -->
+          <div class="col-md-6 col-xl-3">
+            <div class="bg-light rounded p-4 overflow-hidden">
+              <h6 class="mb-5 mb-sm-8">Since</h6>
+              <div class="display-1 text-primary text-end mb-n5 mb-md-n6 me-n4">
+                1996
+              </div>
+            </div>
+          </div>
+
+          <!-- Info content -->
+          <div class="col-md-6 col-xl-4">
+            <h6 class="fw-semibold mb-5">28 Years of working experience</h6>
+
+            <!-- Accordion START -->
+            <div
+              class="accordion accordion-icon accordion-border-bottom"
+              id="accordionFaq"
+              ngbAccordion
+              [closeOthers]="true"
+            >
+              <!-- Item -->
+              <div
+                class="accordion-item mb-3"
+                ngbAccordionItem
+                [collapsed]="false"
+              >
+                <div
+                  class="accordion-header font-base"
+                  id="heading-1"
+                  ngbAccordionHeader
+                >
+                  <button
+                    class="accordion-button fw-semibold rounded"
+                    ngbAccordionToggle
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse-1"
+                    aria-expanded="true"
+                    aria-controls="collapse-1"
+                  >
+                    <i class="bi bi-bullseye text-primary me-2"></i>Our Mission
+                  </button>
+                </div>
+                <!-- Body -->
+                <div
+                  id="collapse-1"
+                  ngbAccordionCollapse
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="heading-1"
+                  data-bs-parent="#accordionFaq"
+                >
+                  <div class="accordion-body pb-0" ngbAccordionBody>
+                    Effective design communicates your brand's identity,
+                    cultivates trust, and can significantly impact conversion
+                    rates and customer loyalty.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="accordion-item mb-3" ngbAccordionItem>
+                <div
+                  class="accordion-header font-base"
+                  id="heading-2"
+                  ngbAccordionHeader
+                >
+                  <button
+                    class="accordion-button fw-semibold rounded"
+                    ngbAccordionToggle
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse-2"
+                    aria-expanded="false"
+                    aria-controls="collapse-2"
+                  >
+                    <i class="bi bi-trophy text-primary me-2"></i>Our Goal
+                  </button>
+                </div>
+                <!-- Body -->
+                <div
+                  id="collapse-2"
+                  ngbAccordionCollapse
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading-2"
+                  data-bs-parent="#accordionFaq"
+                >
+                  <div class="accordion-body pb-0" ngbAccordionBody>
+                    We provide a range of tools, guides, and best practices to
+                    help you create designs, websites.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Accordion END -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

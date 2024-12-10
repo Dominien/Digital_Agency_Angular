@@ -1,0 +1,80 @@
+<section
+  class="vh-xl-auto vh-100 bg-dark py-0 overflow-hidden"
+  data-bs-theme="dark"
+>
+  <div class="container-fluid h-100 p-0">
+    <div class="row h-100 g-0">
+      <!-- Content -->
+      <div class="col-lg-6 m-auto order-2">
+        <div class="px-5 px-xxl-8 py-6 py-lg-8">
+          <!-- Title -->
+          <h1 class="display-2 mb-4 lh-base">
+            Designing the
+            <span class="position-relative z-index-2">
+              Future
+              <!-- Decoration Line -->
+              <span
+                class="w-100 h-auto bg-primary p-1 p-md-2 position-absolute bottom-0 start-0 mb-2 mb-sm-3 z-index-n1"
+              ></span>
+            </span>
+          </h1>
+          <p class="lead mb-5">
+            We specialize in crafting top-tier digital solutions and materials
+            that speak volumes with clarity and precision.
+          </p>
+          <a href="javascript:void(0);" class="btn btn-lg btn-primary mb-0"
+            >Explore our portfolio</a
+          >
+        </div>
+      </div>
+
+      <!-- Image slider -->
+      <div class="col-lg-6 order-1 order-lg-2">
+        <!-- Slider START -->
+        <div class="swiper swiper-img-scale h-100">
+          <swiper-container
+            class="swiper-wrapper"
+            [config]="designHeroSwiper"
+            init="false"
+          >
+            <!-- Slider item -->
+            <swiper-slide class="swiper-slide">
+              <div
+                class="h-100 scale-img py-9"
+                style="
+                  background-image: url(assets/images/bg/07.jpg);
+                  background-position: center left;
+                  background-size: cover;
+                "
+              ></div>
+            </swiper-slide>
+
+            <!-- Slider item -->
+            <swiper-slide class="swiper-slide">
+              <div
+                class="h-100 scale-img py-9"
+                style="
+                  background-image: url(assets/images/bg/12.jpg);
+                  background-position: center left;
+                  background-size: cover;
+                "
+              ></div>
+            </swiper-slide>
+
+            <!-- Slider item -->
+            <swiper-slide class="swiper-slide">
+              <div
+                class="h-100 scale-img py-9"
+                style="
+                  background-image: url(assets/images/bg/13.jpg);
+                  background-position: center left;
+                  background-size: cover;
+                "
+              ></div>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

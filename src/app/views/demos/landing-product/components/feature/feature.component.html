@@ -1,0 +1,46 @@
+<section class="pb-0">
+  <div class="container">
+    <div class="row g-0 bg-light rounded overflow-hidden">
+      <!-- Content -->
+      <div class="col-md-6">
+        <div
+          class="card card-body bg-transparent d-block p-4 p-md-5 p-lg-7 h-100"
+        >
+          <!-- Title -->
+          <h2 class="mb-4">
+            With special audio that places sound all around you
+          </h2>
+          <p class="mb-4">
+            Why end might ask civil again spoil. Dinner she our horses depend
+            remember at children by reserved to vicinity.
+          </p>
+          <!-- List -->
+          <ul class="list-group list-group-borderless mb-4">
+            @for (item of featuresData; track $index) {
+              <li class="list-group-item d-flex heading-color pb-0">
+                <i class="bi {{ item.icon }} text-primary me-2"></i
+                >{{ item.title }}
+              </li>
+            }
+          </ul>
+          <!-- Button -->
+          <a href="javascript:void(0);" class="btn btn-dark mb-0"
+            >Click here for more detail</a
+          >
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="col-md-6">
+        <div
+          class="h-100 py-8 py-md-0"
+          style="
+            background: url(assets/images/about/08.jpg) no-repeat;
+            background-size: cover;
+          "
+        ></div>
+      </div>
+    </div>
+    <!-- Row END -->
+  </div>
+</section>

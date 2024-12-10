@@ -1,0 +1,55 @@
+<section class="pb-0">
+  <div class="container">
+    <!-- Title -->
+    <div class="inner-container-small text-center mb-4 mb-sm-5">
+      <h2 class="mb-0">What people say about us</h2>
+    </div>
+
+    <div
+      class="row row-cols-sm-2 row-cols-lg-3 g-4 g-lg-5"
+      appIsotope
+      [appIsotopeOptions]="{ layoutMode: 'masonry' }"
+    >
+      <!-- Item -->
+      @for (item of testimonialsData; track $index) {
+        <div class="col">
+          <div class="card card-body border">
+            <p class="mb-2">{{ item.comment }}</p>
+            <ul class="list-inline mb-3">
+              <li class="list-inline-item me-1">
+                <i class="bi bi-star-fill text-warning small"></i>
+              </li>
+              <li class="list-inline-item me-1">
+                <i class="bi bi-star-fill text-warning small"></i>
+              </li>
+              <li class="list-inline-item me-1">
+                <i class="bi bi-star-fill text-warning small"></i>
+              </li>
+              <li class="list-inline-item me-1">
+                <i class="bi bi-star-fill text-warning small"></i>
+              </li>
+              <li class="list-inline-item me-1">
+                <i class="bi bi-star-fill text-warning small"></i>
+              </li>
+            </ul>
+            <!-- Avatar -->
+            <div class="d-flex align-items-center">
+              <!-- Avatar -->
+              <div class="avatar avatar-xs me-2">
+                <img
+                  class="avatar-img rounded-circle"
+                  [src]="item.user.avatar"
+                  alt="avatar"
+                />
+              </div>
+              <!-- Info -->
+              <small class="mb-0 heading-color fw-semibold"
+                >{{ item.user.firstName }} {{ item.user.lastName }}</small
+              >
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

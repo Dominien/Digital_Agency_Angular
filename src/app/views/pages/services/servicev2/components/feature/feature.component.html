@@ -1,0 +1,31 @@
+<section class="pt-0">
+  <div class="container">
+    <div class="row g-4 g-lg-5">
+      <!-- Service item -->
+      @for (item of featuresList; track $index) {
+        <div class="col-md-6">
+          <div
+            class="card card-body card-hover-shadow border d-flex flex-row p-4 h-100"
+          >
+            <!-- Icon -->
+            <figure
+              class="text-primary mb-0"
+              [innerHTML]="item.sanitizedIcon"
+            ></figure>
+
+            <!-- Title -->
+            <div class="d-flex flex-column ms-4">
+              <h5 class="mb-3">{{ item.title }}</h5>
+              <p class="mb-3">{{ item.description }}</p>
+              <a
+                class="icon-link icon-link-hover stretched-link mt-auto"
+                routerLink="/services/single"
+                >Know more<i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

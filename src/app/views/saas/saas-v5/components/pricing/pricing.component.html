@@ -1,0 +1,62 @@
+<section class="pt-0">
+  <div class="container">
+    <div class="bg-dark rounded-3 p-5 p-md-6" data-bs-theme="dark">
+      <div class="row g-4 g-md-5">
+        <!-- Title & content -->
+        @for (item of pricingData; track $index) {
+          <div class="col-xl-6 h-100 pe-sm-7">
+            <div class="d-xl-flex justify-content-between">
+              <div>
+                <h3 class="mb-4">{{ item.title }}</h3>
+                <p class="mb-4">{{ item.description }}</p>
+                <a
+                  class="btn btn-white icon-link icon-link-hover"
+                  [routerLink]="item.url"
+                  >View pricing<i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+              <div
+                class="vr bg-secondary opacity-1 ms-5 d-none d-xl-block"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Pricing & features -->
+          <div class="col-xl-6 ms-auto">
+            <div class="row">
+              <!-- Price -->
+              <div class="col-sm-6">
+                <div
+                  class="icon-lg text-primary bg-white rounded-circle mb-3 m-md-start"
+                >
+                  <i class="bi bi-rocket-takeoff fa-lg"></i>
+                </div>
+                <p class="text-secondary fw-semibold mb-3">Unlimited users</p>
+                <h6 class="mb-1">
+                  <span class="fs-1">{{ currency }}120</span> /month
+                </h6>
+                <p class="fw-semibold text-primary">Bulk purchase discount</p>
+              </div>
+
+              <!-- Features -->
+              <div class="col-sm-6 ps-md-5">
+                <p class="text-secondary fw-semibold mb-3">
+                  Features list of your need
+                </p>
+                <!-- List -->
+                <ul class="list-group list-group-borderless">
+                  @for (feature of item.features; track $index) {
+                    <li class="list-group-item d-flex heading-color mb-0">
+                      <i class="bi {{ feature.icon }} text-primary me-2"></i
+                      >{{ feature.title }}
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

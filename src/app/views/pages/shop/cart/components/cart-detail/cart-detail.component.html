@@ -1,0 +1,219 @@
+<section class="pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mb-6 mb-lg-0">
+        <!-- Cart content -->
+        <form class="card bg-transparent">
+          <!-- Card header -->
+          <div
+            class="card-header bg-transparent d-flex justify-content-between align-items-center border-bottom px-0 pt-0"
+          >
+            <!-- Title & button -->
+            <h5 class="mb-0">{{ cartItemsLength$ | async }} products</h5>
+            <button class="btn btn-sm btn-danger-soft mb-0">
+              <i class="bi bi-x-lg me-1"></i>Clear cart
+            </button>
+          </div>
+
+          <!-- Card body -->
+          <div class="card-body px-0">
+            <ng-container *ngIf="state$ | async as state">
+              @for (cart of state.cartItems; track $index) {
+                <div class="row align-items-xl-center">
+                  <!-- Image -->
+                  <div class="col-5 col-md-2">
+                    <div class="bg-light p-2 rounded-2">
+                      <img [src]="cart.product.images[0]" alt="" />
+                    </div>
+                  </div>
+
+                  <div class="col-7 col-md-10">
+                    <div class="row g-3 g-sm-4">
+                      <!-- Content -->
+                      <div class="col-xl-5">
+                        <!-- Product detail START -->
+                        <h6 class="mb-1">
+                          <a href="javascript:void(0);">{{
+                            cart.product.name
+                          }}</a>
+                        </h6>
+                        <!-- List -->
+                        <ul
+                          class="nav nav-divider small align-items-center mt-1"
+                        >
+                          @if (cart.product.attributes?.gender) {
+                            <li class="nav-item">
+                              Gender: {{ cart.product.attributes?.gender }}
+                            </li>
+                          }
+                          @if (cart.product.attributes?.colors) {
+                            <li class="nav-item">
+                              Color:
+                              {{ (cart.product.attributes?.colors)![0].name }}
+                            </li>
+                          }
+                          @if (cart.product.attributes?.size) {
+                            <li class="nav-item">
+                              Size: {{ cart.product.attributes?.size }}
+                            </li>
+                          }
+                        </ul>
+                      </div>
+
+                      <!-- Select -->
+                      <div class="col-sm-6 col-md-4 col-xl-2">
+                        <select
+                          class="form-select form-select-sm"
+                          aria-label="Default select example"
+                        >
+                          <option value="1">01</option>
+                          <option value="2">02</option>
+                          <option value="3">03</option>
+                        </select>
+                      </div>
+
+                      <!-- Price -->
+                      <div class="col-sm-6 col-md-4 col-xl-3 text-md-center">
+                        <h5 class="mb-0">
+                          {{ currency }}{{ cart.product.price.toFixed(2) }}
+                        </h5>
+                      </div>
+
+                      <!-- Button -->
+                      <div class="col-sm-6 col-md-4 col-xl-2 text-md-center">
+                        <a
+                          href="javascript:void(0);"
+                          class="text-danger small"
+                          (click)="
+                            shoppingService.updateQuantityForProduct(
+                              cart.product,
+                              0
+                            )
+                          "
+                          ><i class="bi bi-x-lg"></i> Remove</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <!-- Divider -->
+              }
+            </ng-container>
+
+            <!-- Button -->
+            <div class="text-end">
+              <a href="javascript:void(0);" class="btn btn-light border mb-0"
+                >Update cart</a
+              >
+            </div>
+          </div>
+        </form>
+
+        <!-- CTA -->
+        <div
+          class="card card-body p-md-6 mt-5"
+          style="
+            background-image: url(assets/images/shop/bg/05.jpg);
+            background-position: center left;
+            background-size: cover;
+          "
+        >
+          <div class="col-md-6">
+            <h4 class="text-white mb-4">
+              Checkout the newest smart watch product
+            </h4>
+            <a href="javascript:void(0);" class="btn btn-outline-white mb-0"
+              >Shop now</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side START -->
+      <div class="col-lg-4 ps-xl-6">
+        <!-- Summary -->
+        <div class="card border p-4">
+          <!-- card header -->
+          <div class="card-header p-0 pb-3">
+            <h5 class="card-title mb-0">Promo code</h5>
+
+            <!-- Input -->
+            <form class="input-group mt-4">
+              <input
+                class="form-control rounded me-1"
+                type="email"
+                placeholder="Type here.."
+              />
+              <button type="button" class="btn btn-dark rounded-2 mb-0">
+                Apply
+              </button>
+            </form>
+          </div>
+
+          <!-- Card body -->
+          <div class="card-body p-0 pb-3 mt-2">
+            <ul class="list-group list-group-borderless">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                <span>Subtotal</span>
+                <span class="heading-color fw-semibold mb-0"
+                  >{{ currency
+                  }}{{
+                    shoppingService.getCalculatedOrder().total.toFixed(2)
+                  }}</span
+                >
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                <span>Service Charge</span>
+                <span class="heading-color fw-semibold mb-0"
+                  >-{{ currency
+                  }}{{
+                    shoppingService
+                      .getCalculatedOrder()
+                      .totalDiscount.toFixed(2)
+                  }}</span
+                >
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                <span>Tax</span>
+                <span class="heading-color fw-semibold mb-0"
+                  >{{ currency
+                  }}{{
+                    shoppingService.getCalculatedOrder().tax.toFixed(2)
+                  }}</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card footer -->
+          <div class="card-footer bg-transparent border-top p-0 pt-3">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <span class="heading-color fw-normal">Payable Now</span>
+              <span class="h6 mb-0"
+                >{{ currency
+                }}{{
+                  shoppingService.getCalculatedOrder().orderTotal.toFixed(2)
+                }}</span
+              >
+            </div>
+
+            <!-- Button -->
+            <div class="d-grid">
+              <a href="javascript:void(0);" class="btn btn-lg btn-primary mb-0"
+                >Continue to Checkout</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right side END -->
+    </div>
+  </div>
+</section>

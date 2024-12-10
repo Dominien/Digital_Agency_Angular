@@ -1,0 +1,99 @@
+<account-page-heading heading="My projects" />
+
+<!-- Search and buttons -->
+<div class="row g-3 align-items-center mb-5">
+  <!-- Search -->
+  <div class="col-xl-5">
+    <form class="rounded position-relative">
+      <input
+        class="form-control pe-5"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button
+        class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y"
+        type="submit"
+      >
+        <i class="fas fa-search fs-6"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- Select option -->
+  <div class="col-sm-6 col-xl-3 ms-auto">
+    <!-- Short by filter -->
+    <form>
+      <select class="form-select js-choice" aria-label=".form-select-sm">
+        <option>Sort by</option>
+        <option selected>Published</option>
+        <option>Free</option>
+        <option>Newest</option>
+        <option>Oldest</option>
+      </select>
+    </form>
+  </div>
+
+  <!-- Button -->
+  <div class="col-sm-6 col-xl-3">
+    <a href="javascript:void(0);" class="btn btn-primary mb-0"
+      ><i class="bi bi-plus-lg me-2"></i>Add new project</a
+    >
+  </div>
+</div>
+
+<!-- Table -->
+<div class="table-responsive border-0">
+  <table class="table align-middle p-4 mb-0 table-hover">
+    <!-- Table head -->
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col" class="border-0 text-white rounded-start">Image</th>
+        <th scope="col" class="border-0 text-white">Title</th>
+        <th scope="col" class="border-0 text-white">Status</th>
+        <th scope="col" class="border-0 text-white">Category</th>
+        <th scope="col" class="border-0 text-white rounded-end">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (project of projectsList; track $index) {
+        <tr>
+          <td>
+            <img
+              [src]="project.image"
+              class="img-fluid w-80px rounded"
+              alt="project-img"
+            />
+          </td>
+
+          <td>{{ project.title }}</td>
+
+          <td>
+            <i
+              class="fa-solid fa-circle fa-2xs me-2"
+              [ngClass]="
+                project.status == 'Private' ? 'text-danger' : 'text-success'
+              "
+            ></i
+            >{{ project.status }}
+          </td>
+
+          <td>{{ project.category }}</td>
+
+          <td>
+            <button class="btn btn-sm btn-dark me-2 mb-1 mb-md-0">
+              <i class="bi bi-pencil-square"></i>
+            </button>
+            <button class="btn btn-sm btn-light border me-2 mb-1 mb-md-0">
+              <i class="bi bi-power"></i>
+            </button>
+            <button class="btn btn-sm btn-danger me-1 mb-1 mb-md-0">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

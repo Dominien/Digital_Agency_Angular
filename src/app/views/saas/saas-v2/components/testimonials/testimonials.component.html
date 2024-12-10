@@ -1,0 +1,154 @@
+<section class="pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-11">
+        <div class="row align-items-center">
+          <!-- Slider START -->
+          <div class="col-lg-6 order-2 mt-5 mt-lg-0">
+            <div class="swiper mt-2 mt-md-4">
+              <!-- Slider items -->
+              <swiper-container
+                class="swiper-wrapper align-items-center"
+                [config]="testimonialSwiper"
+                init="false"
+              >
+                @for (item of testimonialsData; track $index) {
+                  <!-- Item -->
+                  <swiper-slide
+                    class="swiper-slide card bg-transparent p-0 pe-md-7"
+                  >
+                    <!-- Image -->
+                    <img
+                      [src]="item.user.avatar"
+                      class="rounded"
+                      alt="review-img"
+                    />
+
+                    <!-- Card body -->
+                    <div
+                      class="col-10 col-xl-9 card-body bg-body shadow rounded position-absolute end-0 bottom-0 p-xl-5 mb-4 me-4"
+                    >
+                      <h6>{{ item.title }}</h6>
+                      <p>{{ item.comment }}</p>
+                      <!-- Rating start -->
+                      <ul class="list-inline mb-1">
+                        <li class="list-inline-item small me-1">
+                          <i class="fas fa-star text-primary"></i>
+                        </li>
+                        <li class="list-inline-item small me-1">
+                          <i class="fas fa-star text-primary"></i>
+                        </li>
+                        <li class="list-inline-item small me-1">
+                          <i class="fas fa-star text-primary"></i>
+                        </li>
+                        <li class="list-inline-item small me-1">
+                          <i class="fas fa-star text-primary"></i>
+                        </li>
+                        <li class="list-inline-item small me-1">
+                          <i class="fas fa-star-half-alt text-primary"></i>
+                        </li>
+                      </ul>
+                      <span class="heading-color fw-bold"
+                        >{{ item.user.firstName }}
+                        {{ item.user.lastName }}</span
+                      >
+                      <p class="small mb-0">{{ item.user.role }}</p>
+                    </div>
+                  </swiper-slide>
+                }
+              </swiper-container>
+            </div>
+          </div>
+          <!-- Slider END -->
+
+          <!-- Title and content START -->
+          <div class="col-lg-6 ms-auto order-1 order-lg-2">
+            <span class="text-primary fw-bold text-uppercase"
+              >Testimonials</span
+            >
+            <!-- Title -->
+            <h2 class="my-3">
+              Don't take our word for it. See what our client says.
+            </h2>
+            <p class="mb-4">
+              Hear what our satisfied clients have to say about their
+              experiences with our platform. Discover how we've helped agencies
+              like yours achieve remarkable results.
+            </p>
+            <!-- Button -->
+            <div class="d-sm-flex gap-3">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-lg btn-dark mb-2 mb-sm-0"
+                >Get Started</a
+              >
+              <a
+                class="icon-link icon-link-hover heading-color text-primary-hover mb-0"
+                href="javascript:void(0);"
+                >Browse features<i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+
+            <hr class="my-6" />
+            <!-- Divider -->
+
+            <!-- Client -->
+            <div
+              class="row row-cols-2 row-cols-sm-3 g-4 g-md-5 align-items-center"
+            >
+              <!-- Image -->
+              <div class="col">
+                <img
+                  src="assets/images/client/01.svg"
+                  class="grayscale px-2"
+                  alt="client-img"
+                />
+              </div>
+              <!-- Image -->
+              <div class="col">
+                <img
+                  src="assets/images/client/02.svg"
+                  class="grayscale px-2"
+                  alt="client-img"
+                />
+              </div>
+              <!-- Image -->
+              <div class="col">
+                <img
+                  src="assets/images/client/03.svg"
+                  class="grayscale px-2"
+                  alt="client-img"
+                />
+              </div>
+              <!-- Image -->
+              <div class="col">
+                <img
+                  src="assets/images/client/04.svg"
+                  class="grayscale px-2"
+                  alt="client-img"
+                />
+              </div>
+              <!-- Image -->
+              <div class="col">
+                <img
+                  src="assets/images/client/05.svg"
+                  class="grayscale px-2"
+                  alt="client-img"
+                />
+              </div>
+              <!-- Image -->
+              <div class="col">
+                <img
+                  src="assets/images/client/07.svg"
+                  class="grayscale px-2"
+                  alt="client-img"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Title and content END -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<section class="pt-0">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5 col-xl-4 mb-5 mb-lg-0">
+        <h2 class="mb-4">Their Impressive Product Collections</h2>
+        <a
+          class="icon-link icon-link-hover heading-color text-primary-hover"
+          href="javascript:void(0);"
+          >Explore all brands<i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="col-lg-7 text-center ms-auto">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4 g-md-6">
+          <!-- Image -->
+          @for (item of brandsData; track $index) {
+            <div class="col">
+              <a href="javascript:void(0);"
+                ><img [src]="item.image" class="grayscale" alt="client-img"
+              /></a>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

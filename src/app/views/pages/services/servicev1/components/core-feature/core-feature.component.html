@@ -1,0 +1,29 @@
+<section class="pb-0">
+  <div class="container">
+    <!-- Title -->
+    <div class="inner-container-small text-center mb-4 mb-sm-6">
+      <h2>Core Feature</h2>
+      <p class="mb-0">
+        He moonlights difficult engrossed it, sportsmen. Interested has all
+        Devonshire difficulty gay assistance joy.
+      </p>
+    </div>
+
+    <!-- Feature START -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-5 g-lg-6">
+      <!-- item -->
+      @for (item of featuresList; track $index) {
+        <div class="col">
+          <div class="card card-body bg-transparent text-center p-0">
+            <span class="h4 text-primary"
+              ><i class="bi {{ item.icon }}"></i
+            ></span>
+            <h6 class="mb-2">{{ item.title }}</h6>
+            <p class="mb-0">{{ item.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+    <!-- Feature END -->
+  </div>
+</section>

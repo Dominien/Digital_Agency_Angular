@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bs-stepper/dist/css/bs-stepper.min.css';
+@import "../public/assets/scss/style.scss";
+
+.arrow-none {
+  &:after {
+    display: none !important;
+  }
+
+  &:before {
+    display: none !important;
+  }
+}
+
+.popularCard {
+  margin-top: 6.5rem !important;
+}
+
+
+.active .bs-stepper-circle {
+  background-color: var(--bs-light) !important;
+}
+
+.bs-stepper .step-trigger:hover {
+  background-color: transparent !important;
+}
+.alert-dismissible .btn-close {
+  padding: 1rem 1rem;
+}
+
+ngb-rating {
+  i {
+  position: relative;
+  display: inline-block;
+  padding-right: 0.3rem;
+  color: #d3d3d3;
+}
+}
+
+.filled {
+  color: rgba(var(--bs-warning-rgb)) !important;
+  overflow: hidden ;
+  position: absolute !important;
+  top: 0;
+  left: 0 ;
+}
+

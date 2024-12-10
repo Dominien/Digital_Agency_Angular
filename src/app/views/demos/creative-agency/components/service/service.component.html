@@ -1,0 +1,43 @@
+<section class="pb-0">
+  <div class="container">
+    <!-- Title -->
+    <div class="inner-container text-center mb-4 mb-sm-6">
+      <h2 class="mb-0">Our Comprehensive Services</h2>
+    </div>
+
+    <!-- Service list START -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+      <!-- Service item -->
+      @for (item of digitalServices; track $index) {
+        <div class="col">
+          <div class="card card-hover-shadow border h-100 p-4">
+            <!-- Card body -->
+            <div class="card-body p-0">
+              <!-- Icon -->
+              <figure
+                class="text-primary mb-4"
+                [innerHTML]="item.sanitizedIcon"
+              ></figure>
+
+              <!-- Content -->
+              <h5 class="mb-3">
+                <a href="javascrip:void(0);">{{ item.title }}</a>
+              </h5>
+              <p>{{ item.description }}</p>
+            </div>
+
+            <!-- Card footer -->
+            <div class="card-footer mt-auto p-0 pt-2">
+              <a
+                class="icon-link icon-link-hover stretched-link z-index-2"
+                href="javascript:void(0);"
+                >View detail<i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+    <!-- Service list END -->
+  </div>
+</section>

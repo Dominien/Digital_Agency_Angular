@@ -1,0 +1,129 @@
+<section class="pb-5 pb-sm-7">
+  <div class="container">
+    <app-breadcrumb [title]="['Shop']" pageTitle="All product" />
+    <h1 class="h3 mb-0 mt-3">Search items</h1>
+  </div>
+</section>
+
+<section class="pt-0">
+  <div class="container">
+    <div class="row">
+      <!-- Filter sidebar START -->
+      <aside class="col-xl-3">
+        <!-- Responsive offcanvas body START -->
+        <div
+          class="offcanvas-xl offcanvas-end"
+          tabindex="-1"
+          id="offcanvasSidebar"
+          aria-labelledby="offcanvasSidebarLabel"
+        >
+          <product-filter-sidebar />
+        </div>
+      </aside>
+      <!-- Filter sidebar END -->
+
+      <!-- Product grid START -->
+      <div class="col-xl-9 ps-xl-6">
+        <!-- Search, select and responsive filter button -->
+        <form class="row g-2 g-xl-4 mb-4">
+          <!-- Search -->
+          <div class="col-md-6">
+            <div class="rounded position-relative">
+              <input
+                class="form-control bg-light pe-5"
+                type="search"
+                placeholder="Search products by name or keyword..."
+                aria-label="Search"
+              />
+              <button
+                class="btn bg-transparent border-0 px-2 py-0 position-absolute top-50 end-0 translate-middle-y"
+                type="submit"
+              >
+                <i class="bi bi-search"> </i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Select -->
+          <div class="col-sm-6 col-md-3 ms-auto">
+            <select class="form-select" aria-label="Default select example">
+              <option selected="">Sort by</option>
+              <option value="1">Name</option>
+              <option value="2">Low to High Price</option>
+              <option value="3">High to Low Price</option>
+            </select>
+          </div>
+
+          <div class="col-sm-6 col-md-3 d-grid d-xl-none">
+            <!-- Filter offcanvas button -->
+            <button
+              class="btn btn-dark mb-0"
+              (click)="openFilter()"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasSidebar"
+              aria-controls="offcanvasSidebar"
+            >
+              <i class="fas fa-sliders-h me-1"></i> Show filter
+            </button>
+          </div>
+        </form>
+
+        <!-- Products -->
+        <div class="row g-4 g-lg-5">
+          <!-- Product item -->
+          @for (product of productGridList; track $index) {
+            <div class="col-sm-6 col-lg-4">
+              <product-card [product]="product" />
+            </div>
+            @if ($index == 2) {
+              <div class="col-sm-6 col-lg-12">
+                <div
+                  class="card card-body h-100 p-md-6"
+                  style="
+                    background-image: url(assets/images/shop/bg/05.jpg);
+                    background-position: center left;
+                    background-size: cover;
+                  "
+                >
+                  <div class="row align-items-center">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                      <h4 class="text-white mb-0">
+                        Checkout the newest smart watch product
+                      </h4>
+                    </div>
+                    <div class="col-lg-5 text-lg-end">
+                      <a href="javascript:void(0);" class="btn btn-white mb-0"
+                        >Shop now</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+          }
+        </div>
+        <!-- Row END -->
+
+        <!-- Pagination -->
+        <ul
+          class="pagination pagination-primary-soft d-flex justify-content-end mb-0 mt-5"
+        >
+          <ngb-pagination
+            [collectionSize]="110"
+            [ellipses]="true"
+            [maxSize]="2"
+            [page]="1"
+            [pageSize]="5"
+          >
+            <ng-template ngbPaginationPrevious>Prev</ng-template>
+            <ng-template ngbPaginationNext>Next</ng-template>
+          </ngb-pagination>
+        </ul>
+      </div>
+      <!-- Product grid END -->
+    </div>
+  </div>
+</section>
+<!-- =======================
+Product content END -->

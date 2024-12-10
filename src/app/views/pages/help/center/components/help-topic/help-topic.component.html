@@ -1,0 +1,40 @@
+<section>
+  <div class="container">
+    <div class="row g-4 g-xl-6">
+      @for (topic of helpTopics; track $index) {
+        <div class="col-md-6 col-lg-4">
+          <div class="card border p-4 h-100">
+            <div class="card-body p-0">
+              <!-- Icon -->
+              <div
+                class="icon-md bg-primary text-white rounded flex-shrink-0 mb-3"
+              >
+                <i class="bi {{ topic.icon }} fs-6"></i>
+              </div>
+              <!-- Title -->
+              <h6 class="card-title mb-3">{{ topic.title }}</h6>
+              <!-- Links -->
+              <ul class="nav flex-column">
+                @for (feature of topic.content; track feature) {
+                  <li class="nav-item">
+                    <a class="nav-link d-flex" routerLink="/help/detail"
+                      ><i class="fa-solid fa-angle-right pt-1 me-2"></i
+                      >{{ feature }}</a
+                    >
+                  </li>
+                }
+              </ul>
+            </div>
+
+            <!-- Button -->
+            <div class="card-footer p-0 pt-3">
+              <a class="icon-link icon-link-hover" href="javascript:void(0);"
+                >View all articles<i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

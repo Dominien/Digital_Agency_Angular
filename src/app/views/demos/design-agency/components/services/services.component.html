@@ -1,0 +1,41 @@
+<section class="bg-dark" data-bs-theme="dark">
+  <div class="container">
+    <div class="inner-container-small m-0 mb-7">
+      <h2 class="mb-4">Our Comprehensive Services</h2>
+      <p class="mb-0">
+        Our team of experts specializes in delivering tailored services designed
+        to propel your organization forward in today's fast-paced digital
+        landscape.
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        @for (item of servicesData; track $index) {
+          <hr />
+          <!-- Divider -->
+          <!-- Service item -->
+          <div class="row align-items-center position-relative py-4">
+            <div class="col-md-2 mb-3 mb-md-0">
+              <img [src]="item.image" class="h-60px" alt="service icon" />
+            </div>
+
+            <div class="col-md-3 mb-3 mb-md-0">
+              <h5 class="mb-0">
+                <a href="javascript:void(0);" class="stretched-link">{{
+                  item.title
+                }}</a>
+              </h5>
+            </div>
+
+            <div class="col-md-5 ms-auto">
+              <p class="mb-0">{{ item.description }}</p>
+            </div>
+          </div>
+        }
+        <hr />
+        <!-- Divider -->
+      </div>
+    </div>
+  </div>
+</section>

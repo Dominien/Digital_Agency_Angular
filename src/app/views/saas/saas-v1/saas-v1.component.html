@@ -1,0 +1,41 @@
+<sticky-header-component
+  [headerClass]="'header-sticky header-absolute'"
+  [mode]="'dark'"
+>
+  @if (staticAlert) {
+    <ngb-alert
+      [dismissible]="false"
+      class="alert py-2 m-0 bg-primary border-0 rounded-0 alert-dismissible fade show text-center overflow-hidden"
+    >
+      <p class="text-white small m-0">
+        <i class="fa-solid fa-crown me-2"></i> New version is here! Discover
+        what's fresh and improved.
+        <button
+          type="button"
+          class="btn-close btn-close-white opacity-9 p-3"
+          (click)="staticAlert = false"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </p>
+    </ngb-alert>
+  }
+  <app-horizontal-menu
+    [ulClassName]="'mx-auto'"
+    [docShow]="true"
+    [showSignUp]="true"
+    [showBuyNow]="true"
+  />
+</sticky-header-component>
+
+<main>
+  <saas-v1-hero />
+  <saas-v1-feature-group />
+  <saas-v1-feature-section />
+  <saas-v1-feature-section2 />
+  <saas-v1-integration />
+  <saas-v1-pricing />
+  <saas-v1-blog />
+</main>
+
+<app-footer2 theme="dark" />

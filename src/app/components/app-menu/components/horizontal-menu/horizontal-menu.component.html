@@ -1,0 +1,371 @@
+<!-- Logo Nav START -->
+<nav [class]="'navbar navbar-expand-xl'" [ngClass]="navClass">
+  <div [ngClass]="containerClass ? 'container' : 'container-fluid'">
+    <!-- Logo START -->
+    <app-logo-box class="navbar-brand me-0" [ngClass]="logoClass" />
+    <!-- Logo END -->
+
+    <!-- Main navbar START -->
+    <div
+      #collapse="ngbCollapse"
+      [(ngbCollapse)]="isCollapsed"
+      class="navbar-collapse collapse"
+      id="navbarCollapse"
+      ngbAccordion
+    >
+      <ul
+        class="navbar-nav navbar-nav-scroll dropdown-hover"
+        [ngClass]="ulClassName"
+      >
+        <ng-container *ngIf="menuItems.length">
+          <app-demos-menu-dropdown
+            [menuItems]="menuItems[0].children"
+            [activeMenuItems]="activeMenuItems"
+          ></app-demos-menu-dropdown>
+          <app-pages-menu-dropdown
+            [menuItems]="menuItems[1].children"
+            [activeMenuItems]="activeMenuItems"
+          ></app-pages-menu-dropdown>
+
+          <ng-container *ngIf="resourcesMenu">
+            <app-resources-menu-dropdown></app-resources-menu-dropdown>
+          </ng-container>
+
+          <app-portfolio-menu-dropdown
+            [menuItems]="menuItems[2].children"
+            [activeMenuItems]="activeMenuItems"
+          ></app-portfolio-menu-dropdown>
+
+          <ng-container *ngIf="megaMenu">
+            <app-mega-menu-dropdown></app-mega-menu-dropdown>
+          </ng-container>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/contact/v1'">Contact us</a>
+          </li>
+
+          @if (docShow) {
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://mizzle-ng.vercel.app/docs/index.html"
+                target="_blank"
+                >Docs</a
+              >
+            </li>
+          }
+        </ng-container>
+      </ul>
+    </div>
+    <ul class="nav align-items-center dropdown-hover ms-sm-2">
+      @if (hideToggle) {
+        <!-- Dark mode option START -->
+        <li class="nav-item dropdown dropdown-animation" ngbDropdown>
+          <button
+            class="btn btn-link mb-0 px-2 lh-1 arrow-none"
+            id="bd-theme"
+            ngbDropdownToggle
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+            data-bs-display="static"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              class="bi bi-circle-half theme-icon-active fill-mode fa-fw"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+              />
+              <use href="javascript:void(0);"></use>
+            </svg>
+          </button>
+
+          <ul
+            class="dropdown-menu min-w-auto dropdown-menu-end"
+            aria-labelledby="bd-theme"
+            ngbDropdownMenu
+          >
+            <li class="mb-1">
+              <button
+                type="button"
+                (click)="changeTheme('light')"
+                [ngClass]="{ active: mode === 'light' }"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-theme-value="light"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-brightness-high-fill fa-fw mode-switch me-1"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+                  />
+                  <use href="javascript:void(0);"></use></svg
+                >Light
+              </button>
+            </li>
+            <li class="mb-1">
+              <button
+                type="button"
+                (click)="changeTheme('dark')"
+                [ngClass]="{ active: mode === 'dark' }"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-theme-value="dark"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-moon-stars-fill fa-fw mode-switch me-1"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+                  />
+                  <path
+                    d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+                  />
+                  <use href="javascript:void(0);"></use></svg
+                >Dark
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                (click)="changeTheme('auto')"
+                [ngClass]="{ active: mode === 'auto' }"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-theme-value="auto"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-circle-half fa-fw mode-switch me-1"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                  />
+                  <use href="javascript:void(0);"></use></svg
+                >Auto
+              </button>
+            </li>
+          </ul>
+        </li>
+      }
+      <!-- Dark mode option END -->
+
+      <!-- Sign up button -->
+      @if (showSignUp) {
+        <li class="nav-item me-2">
+          <a routerLink="/auth/sign-up" class="btn btn-sm btn-light mb-0"
+            ><i class="bi bi-person-circle me-1"></i>Sign up</a
+          >
+        </li>
+      }
+
+      <!-- Buy now button -->
+      @if (showBuyNow) {
+        <li class="nav-item d-none d-sm-block">
+          <button class="btn btn-sm btn-primary mb-0">Buy now!</button>
+        </li>
+      }
+
+      @if (floatingSearch) {
+        <li
+          class="nav nav-item dropdown nav-search px-1 px-lg-3 me-3 me-md-0"
+          ngbDropdown
+        >
+          <a
+            class="btn btn-light border btn-round mb-0 arrow-none"
+            role="button"
+            ngbDropdownToggle
+            href="javascript:void(0);"
+            id="navSearch"
+            data-bs-toggle="dropdown"
+            aria-expanded="true"
+            data-bs-auto-close="outside"
+            data-bs-display="static"
+          >
+            <i class="bi bi-search"> </i>
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-end shadow rounded p-2"
+            ngbDropdownMenu
+            aria-labelledby="navSearch"
+            data-bs-popper="none"
+          >
+            <form class="input-group">
+              <input
+                class="form-control border-primary"
+                type="search"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+              <button class="btn btn-primary m-0" type="submit">Search</button>
+            </form>
+          </div>
+        </li>
+      }
+      @if (darkButton) {
+        <li class="nav-item d-none d-sm-block ms-2">
+          <a class="btn btn-dark mb-0" [ngClass]="darkButtonStyle">{{
+            text
+          }}</a>
+        </li>
+      }
+
+      @if (showSearchInput) {
+        <li
+          class="nav-item flex-nowrap align-items-center ms-3 d-none d-md-block"
+        >
+          <form class="position-relative">
+            <input
+              class="form-control pe-5 bg-light"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+              type="submit"
+            >
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </li>
+      }
+      @if (showShoppingCart) {
+        <li class="nav-item position-relative ms-2 ms-sm-3">
+          <a
+            class="btn btn-light border btn-round mb-0"
+            (click)="open(content)"
+            data-bs-toggle="offcanvas"
+            href="javascript:void(0);"
+            role="button"
+            aria-controls="offcanvasMenu"
+          >
+            <i class="bi bi-cart3 fa-fw" data-bs-target="#offcanvasMenu"></i>
+          </a>
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge smaller rounded-circle bg-primary mt-xl-2 ms-n1"
+          >
+            {{ cartItemsLength$ | async }}
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </li>
+      }
+      <!-- Responsive navbar toggler -->
+      <li class="nav-item">
+        <button
+          class="navbar-toggler ms-sm-3 p-2"
+          (click)="collapse.toggle()"
+          [attr.aria-expanded]="!isCollapsed"
+          aria-controls="collapseExample"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          [attr.aria-expanded]="isOffcanvasOpen"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-animation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<ng-template
+  #content
+  let-offcanvas
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasMenu"
+>
+  <!-- Offcanvas header -->
+  <div class="offcanvas-header justify-content-between border-bottom px-3">
+    <h5 class="mb-0">Your Cart</h5>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      (click)="offcanvas.close('Close click')"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <!-- Offcanvas body -->
+  <div class="offcanvas-body d-flex flex-column gap-5 px-3">
+    <ng-container *ngIf="state$ | async as state">
+      @for (cart of state.cartItems; track $index) {
+        <div class="row g-3">
+          <div class="col-4">
+            <img
+              class="rounded-2 bg-light p-2"
+              [src]="cart.product.images[0]"
+              alt="avatar"
+            />
+          </div>
+          <div class="col-8">
+            <p class="heading-color fw-semibold mb-1">
+              {{ cart.product.name }}
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <select
+                class="form-select form-select-sm w-auto"
+                aria-label="Default select example"
+              >
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+              </select>
+
+              <a
+                href="javascript:void(0);"
+                class="btn btn-sm btn-link p-0"
+                (click)="
+                  shoppingService.updateQuantityForProduct(cart.product, 0)
+                "
+                >Remove</a
+              >
+            </div>
+          </div>
+        </div>
+      }
+    </ng-container>
+
+    <!-- Button and price -->
+    <div class="mt-auto">
+      <div class="d-flex justify-content-between mb-2">
+        <span class="heading-color fw-semibold">Subtotal</span>
+        <h6 class="text-success mb-0">
+          {{ currency
+          }}{{ shoppingService.getCalculatedOrder().orderTotal.toFixed(2) }}
+        </h6>
+      </div>
+      <!-- Button -->
+      <div class="d-grid">
+        <a routerLink="/shop/checkout" class="btn btn-lg btn-dark mb-0"
+          >Continue to Checkout</a
+        >
+      </div>
+    </div>
+  </div>
+</ng-template>

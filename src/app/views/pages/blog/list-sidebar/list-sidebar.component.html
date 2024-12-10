@@ -1,0 +1,57 @@
+<blog-list-hero />
+<section class="pt-0">
+  <div class="container">
+    <div class="row g-xl-7">
+      <!-- Blog list START -->
+      <div class="col-lg-8">
+        <our-blogs />
+      </div>
+      <!-- Blog list END -->
+
+      <!-- Sidebar START -->
+      <div class="col-lg-4 mt-5 mt-lg-0">
+        <blog-list-sidebar />
+      </div>
+      <!-- Sidebar END -->
+
+      <div class="col-12 mt-6">
+        <ul
+          class="pagination pagination-primary-soft d-flex justify-content-sm-between flex-wrap mb-0"
+        >
+          <li>
+            <ul class="list-unstyled">
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0);"
+                  ><i class="fas fa-long-arrow-alt-left me-2 rtl-flip"></i
+                  >Prev</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul class="list-unstyled">
+              <ngb-pagination
+                [collectionSize]="115"
+                [directionLinks]="false"
+                [ellipses]="true"
+                [maxSize]="2"
+                [page]="1"
+                [pageSize]="5"
+              >
+              </ngb-pagination>
+            </ul>
+          </li>
+          <li>
+            <ul class="list-unstyled">
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0);"
+                  >Next<i class="fas fa-long-arrow-alt-right ms-2 rtl-flip"></i
+                ></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

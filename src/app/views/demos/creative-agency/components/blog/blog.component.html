@@ -1,0 +1,58 @@
+<section class="pb-0">
+  <div class="container">
+    <!-- Title -->
+    <div class="inner-container text-center mb-4 mb-sm-6">
+      <h2 class="mb-0">Our news & articles</h2>
+    </div>
+
+    <!-- Slider START -->
+    <div class="swiper">
+      <swiper-container
+        class="swiper-wrapper"
+        init="false"
+        [config]="blogTestimonial"
+      >
+        <!-- Slider item -->
+        @for (item of blogsData; track $index) {
+          <swiper-slide class="swiper-slide">
+            <article class="card bg-transparent">
+              <!-- Image -->
+              <img [src]="item.image" class="card-img" alt="blog-image" />
+              <div class="card-body px-0 pb-0">
+                <h6 class="card-title">{{ item.title }}</h6>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="mb-0">
+                    By {{ item.publishedBy?.firstName }}
+                    {{ item.publishedBy?.lastName }}
+                  </p>
+                  <a
+                    class="icon-link icon-link-hover stretched-link me-1"
+                    routerLink="{{ item.url }}"
+                    >Read more<i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </swiper-slide>
+        }
+      </swiper-container>
+
+      <!-- Add pagination and navigation elements here -->
+      <div
+        class="d-flex justify-content-between position-absolute top-50 start-0 w-100"
+      >
+        <a
+          href="javascript:void(0);"
+          class="btn btn-dark btn-icon btn-lg rounded-circle mb-0 swiper-button-prev"
+          ><i class="bi bi-arrow-left"></i
+        ></a>
+        <a
+          href="javascript:void(0);"
+          class="btn btn-dark btn-icon btn-lg rounded-circle mb-0 swiper-button-next"
+          ><i class="bi bi-arrow-right"></i
+        ></a>
+      </div>
+    </div>
+    <!-- Slider END -->
+  </div>
+</section>

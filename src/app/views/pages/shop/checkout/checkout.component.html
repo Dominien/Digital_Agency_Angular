@@ -1,0 +1,39 @@
+<section class="pb-5 pb-md-7">
+  <div class="container">
+    <!-- Title and breadcrumb -->
+    <app-breadcrumb [title]="['All product', 'Cart']" pageTitle="Checkout" />
+    <h1 class="h3 mb-0 mt-3">Checkout</h1>
+  </div>
+</section>
+<!-- =======================
+Main Title END -->
+
+<!-- =======================
+Checkout content START -->
+<section class="pt-0">
+  <div class="container">
+    <div class="row">
+      <!-- Left side START -->
+      <div class="col-lg-8 mb-6 mb-lg-0">
+        <!-- Personal info START -->
+        <checkout-personal-info />
+        <!-- Personal info END -->
+
+        <!-- Payment options START -->
+        <checkout-payment-option />
+        <!-- Payment options END -->
+      </div>
+      <!-- Left side END -->
+
+      <!-- Right side START -->
+      <div class="col-lg-4 ps-xl-6">
+        <!-- Summary -->
+        <checkout-promo-code />
+
+        <!-- Product detail -->
+        <checkout-detail />
+      </div>
+      <!-- Right side END -->
+    </div>
+  </div>
+</section>

@@ -1,0 +1,55 @@
+<Section>
+  <div class="container">
+    <!-- Title -->
+    <div class="row align-items-center g-4 mb-5">
+      <div class="col-md-6">
+        <h2 class="mb-0">Take a look at the latest articles & blogs</h2>
+      </div>
+      <div class="col-md-5 ms-auto text-sm-end">
+        <!-- Button -->
+        <a routerLink="/blog/grid" class="btn btn-light btn-lg mb-0"
+          >View all blogs</a
+        >
+      </div>
+    </div>
+
+    <div class="row g-4 g-xl-5">
+      <!-- Blog item -->
+      @for (item of blogsData; track $index) {
+        <div class="col-md-4">
+          <article class="card card-img-scale shadow overflow-hidden h-100">
+            <!-- Image -->
+            <div class="card-img-scale-wrapper">
+              <img
+                [src]="item.image"
+                class="img-scale card-img-top"
+                alt="Blog-img"
+              />
+            </div>
+
+            <div class="card-body p-4">
+              <!-- Content -->
+              <h6 class="card-title mb-4">
+                <a [routerLink]="item.url" class="stretched-link">{{
+                  item.title
+                }}</a>
+              </h6>
+              <ul class="nav heading-color small nav-divider mb-0">
+                <li class="nav-item">
+                  By {{ item.publishedBy?.firstName }}
+                  {{ item.publishedBy?.lastName }}
+                </li>
+                <li class="nav-item">
+                  <i class="bi bi-calendar me-1"></i
+                  >{{ item.publishedAt?.month }} {{ item.publishedAt?.date }},
+                  {{ item.publishedAt?.year }}
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+    <!-- Row END -->
+  </div>
+</Section>

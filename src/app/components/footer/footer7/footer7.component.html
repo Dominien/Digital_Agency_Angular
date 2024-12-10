@@ -1,0 +1,51 @@
+<footer>
+  <div class="container">
+    <div
+      class="bg-dark rounded position-relative p-4 p-sm-6 mb-3 mb-sm-5"
+      data-bs-theme="dark"
+    >
+      <div class="row mx-auto">
+        <div class="col-lg-8 mx-auto text-center px-0">
+          <!-- Logo -->
+          <app-logo-box imageClassName="h-60px" />
+
+          <p class="mt-4">
+            A Bootstrap theme that's both stylish and functional, perfect for
+            any type of technology or corporate website.
+          </p>
+          <!-- Links -->
+          <ul class="nav justify-content-center mt-4 mt-md-0">
+            @for (item of quickLinks; track $index) {
+              <li class="nav-item">
+                <a class="nav-link px-3 pb-0" href="javascript:void(0);">{{
+                  item.name
+                }}</a>
+              </li>
+            }
+          </ul>
+          <!-- Social media button -->
+          <ul class="list-inline mb-0 mt-4">
+            @for (item of socialMediaLinks; track $index) {
+              <li class="list-inline-item pe-1">
+                <a
+                  class="btn btn-xs btn-icon {{ item.iconClassName }}"
+                  href="javascript:void(0);"
+                  ><i class="fab fa-fw {{ item.icon }} lh-base"></i
+                ></a>
+              </li>
+            }
+          </ul>
+          <!-- copyright text -->
+          <div class="text-body mt-4">
+            Copyrights ©{{ currentYear }} Mizzle. Build by
+            <a
+              href="{{ creditsTo.website }}"
+              class="text-body text-primary-hover"
+              >{{ creditsTo.name }}</a
+            >.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

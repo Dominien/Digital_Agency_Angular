@@ -1,0 +1,105 @@
+<footer
+  class="bg-dark position-relative overflow-hidden pb-0 pt-6 pt-lg-8"
+  data-bs-theme="dark"
+>
+  <footer-decoration-pattern />
+
+  <div class="position-absolute top-0 end-0 mt-n3 me-n4">
+    <img
+      src="assets/images/elements/decoration-pattern-2.svg"
+      style="opacity: 0.05"
+      alt=""
+    />
+  </div>
+
+  <div class="container position-relative mt-5">
+    <div class="row g-4 justify-content-between">
+      <div class="col-lg-3">
+        <app-logo-box className="me-0" imageClassName="h-40px" />
+
+        <p class="mt-4 mb-2">
+          A Bootstrap theme that's both stylish and functional, perfect for any
+          type of technology or corporate website.
+        </p>
+      </div>
+
+      <div class="col-lg-8 col-xxl-7">
+        <div class="row g-4">
+          <div class="col-6 col-md-4">
+            <h6 class="mb-2 mb-md-4">Quick links</h6>
+            <ul class="nav flex-column">
+              @for (link of quickLink; track $index) {
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/about/v1"
+                    >{{ link.name }}
+                    @if (link.badge) {
+                      <span class="badge text-bg-danger ms-2">{{
+                        link.badge
+                      }}</span>
+                    }
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <h6 class="mb-2 mb-md-4">Community</h6>
+            <ul class="nav flex-column">
+              @for (item of communityList; track $index) {
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0);"
+                    >{{ item.name }}
+                    @if (item.icon) {
+                      <i class="bi {{ item.icon }} small ms-1"></i>
+                    }
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h6 class="mb-2 mb-md-4">App available on</h6>
+            <div class="row g-2 mt-2 mb-4 mb-sm-5">
+              <div class="col-5 col-sm-4 col-md-6">
+                <a href="javascript:void(0);">
+                  <img src="assets/images/elements/google-play.svg" alt="" />
+                </a>
+              </div>
+              <div class="col-5 col-sm-4 col-md-6">
+                <a href="javascript:void(0);">
+                  <img
+                    src="assets/images/elements/app-store.svg"
+                    alt="app-store"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <h6 class="mb-2 mb-md-4">Follow on</h6>
+
+            <ul class="list-inline mb-0 mt-3">
+              @for (link of socialLinks; track $index; let first = $first) {
+                <li
+                  class="list-inline-item me-2"
+                  [ngClass]="{ 'ms-1': !first }"
+                >
+                  <a
+                    class="btn btn-xs btn-icon btn-light"
+                    href="javascript:void(0);"
+                    ><i class="fab fa-fw {{ link.icon }} lh-base"></i
+                  ></a>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="mt-4 mb-0" />
+
+    <footer-credit-with-language />
+  </div>
+</footer>

@@ -1,0 +1,408 @@
+<sticky-header-component class="header-sticky header-absolute">
+  <app-horizontal-menu
+    [docShow]="true"
+    [ulClassName]="'mx-auto'"
+    [showSignUp]="true"
+    [showBuyNow]="true"
+  />
+</sticky-header-component>
+
+<main>
+  <section class="pt-xl-9">
+    <div class="container pt-4 pt-xl-0">
+      <div class="row">
+        <!-- Title -->
+        <div class="col-md-9 mx-auto text-center">
+          <!-- Bread crumb -->
+          <div class="d-flex justify-content-center position-relative mb-4">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-dots pb-0 mb-0">
+                <li class="breadcrumb-item">
+                  <a href="javascript:void(0);">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="javascript:void(0);">Portfolio Showcase</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Portfolio case studies v1
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <!-- Title -->
+          <h1 class="mb-4">Transforming Ideas into Reality</h1>
+          <p>
+            In affronting unreserved delightful simplicity ye. Law own advantage
+            furniture continual sweetness bed agreeable perpetual. Oh song well
+            four only head busy it. Afford son she had lively living.
+          </p>
+        </div>
+
+        <!-- Image -->
+        <div class="col-12 mt-6">
+          <div
+            class="card h-300px h-md-400px h-xl-600px overflow-hidden"
+            style="
+              background: url(assets/images/portfolio/case-study-01.jpg)
+                no-repeat;
+              background-size: cover;
+              background-position: center;
+            "
+          ></div>
+        </div>
+
+        <!-- Info -->
+        <div class="col-12 mt-6">
+          <div class="row">
+            <!-- Project info -->
+            <div class="col-11 col-lg-5 col-xl-4 mx-auto mt-n8 mt-md-n9">
+              <div class="card card-body bg-dark p-sm-5" data-bs-theme="dark">
+                <!-- List -->
+                <ul class="list-group list-group-borderless">
+                  @for (item of projectInfoData; track $index) {
+                    <li class="list-group-item mb-3">
+                      <small>{{ item.title }}</small>
+                      <p class="heading-color lead mt-1 mb-0">
+                        {{ item.description }}
+                      </p>
+                    </li>
+                  }
+                  <li class="list-group-item d-grid mb-0">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn btn-lg btn-primary mb-0"
+                      >View project website<i
+                        class="bi bi-box-arrow-up-right ms-2"
+                      ></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Project detail -->
+            <div class="col-lg-7 ms-auto ps-5 mt-6 mt-lg-0">
+              <h4 class="mb-3">Overview</h4>
+              <p class="lead">
+                Ideas are the seeds of innovation. They can originate from
+                personal experiences, observations, or the desire to solve a
+                problem.
+              </p>
+              <p>
+                Once an idea takes root, it requires nurturing and refinement.
+                This stage involves research, brainstorming, and gathering
+                feedback. Conducting market analysis, exploring existing
+                solutions, and collaborating with others can help refine the
+                idea further. The goal is to gain a deeper understanding of the
+                idea's feasibility, potential impact, and market viability.
+              </p>
+              <ul class="list-inline mb-6">
+                <li class="list-inline-item me-2">
+                  <a
+                    class="btn btn-outline-light rounded-pills btn-sm mb-lg-0"
+                    href="javascript:void(0);"
+                    >Branding</a
+                  >
+                </li>
+                <li class="list-inline-item me-2 ms-1">
+                  <a
+                    class="btn btn-outline-light rounded-pills btn-sm mb-lg-0"
+                    href="javascript:void(0);"
+                    >Packaging</a
+                  >
+                </li>
+                <li class="list-inline-item ms-1">
+                  <a
+                    class="btn btn-outline-light rounded-pills btn-sm mb-lg-0"
+                    href="javascript:void(0);"
+                    >UI/UX design</a
+                  >
+                </li>
+              </ul>
+
+              <h4 class="mb-3">The Challenge</h4>
+              <p>
+                Turning ideas into reality is a transformative process that
+                drives innovation and progress. It begins with recognizing the
+                power and potential of an idea. Through cultivation, planning,
+                and strategizing, ideas are refined and shaped into actionable
+                plans. Challenges are embraced as opportunities for growth, and
+                perseverance becomes key in overcoming obstacles.
+              </p>
+              <ul class="list-group list-group-borderless">
+                <li class="list-group-item d-flex">
+                  <i class="bi bi-check-circle text-primary me-2"></i>Maintained
+                  Windows Servers
+                </li>
+                <li class="list-group-item d-flex">
+                  <i class="bi bi-check-circle text-primary me-2"></i>Supported
+                  Windows workstations
+                </li>
+                <li class="list-group-item d-flex">
+                  <i class="bi bi-check-circle text-primary me-2"></i>Setup a
+                  rotation schedule and set an anti-virus system
+                </li>
+                <li class="list-group-item d-flex">
+                  <i class="bi bi-check-circle text-primary me-2"></i>Designed
+                  machines/servers and trained employees
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Images -->
+        <div class="col-12 mt-6">
+          <lightgallery class="row g-4 g-xl-6" [settings]="setting">
+            <div class="col-sm-4">
+              <a href="assets/images/portfolio/masonry/08.jpg">
+                <img
+                  src="assets/images/portfolio/masonry/08.jpg"
+                  class="rounded"
+                  alt="blog-img"
+                />
+              </a>
+            </div>
+            <div class="col-sm-4">
+              <a href="assets/images/portfolio/masonry/06.jpg">
+                <img
+                  src="assets/images/portfolio/masonry/06.jpg"
+                  class="rounded mt-sm-6"
+                  alt="blog-img"
+                />
+              </a>
+            </div>
+            <div class="col-sm-4">
+              <a href="assets/images/portfolio/masonry/05.jpg">
+                <img
+                  src="assets/images/portfolio/masonry/05.jpg"
+                  class="rounded"
+                  alt="blog-img"
+                />
+              </a>
+            </div>
+          </lightgallery>
+        </div>
+
+        <!-- Result and skillset content -->
+        <div class="col-12">
+          <div class="row g-4 mt-7">
+            <!-- Result -->
+            <div class="col-lg-5">
+              <h4 class="mb-3">Result</h4>
+              <p class="lead mb-4">
+                Two assure Edward whence the was. Who worthy yet ten boys denote
+                wonder. Weeks views her sight old tears sorry. Additions can
+                suspected its concealed put furnished.
+              </p>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-link heading-color text-primary-hover p-0 mb-0"
+                >View project website<i
+                  class="bi bi-box-arrow-up-right ms-2"
+                ></i
+              ></a>
+            </div>
+
+            <div class="col-lg-7 col-xl-6 ms-auto">
+              <p>
+                Transforming ideas into reality often requires collaboration
+                with a diverse range of individuals. Partnering with experts,
+                seeking mentorship, and building a network of like-minded
+                individuals can provide valuable insights and support.
+              </p>
+
+              <div class="row row-cols-2 row-cols-md-3 mt-lg-6 g-4 g-lg-5">
+                <div class="col">
+                  <h2 class="mb-0">
+                    22<span class="text-primary mb-0">%</span>
+                  </h2>
+                  <p class="mb-0">Increase in time spent on website</p>
+                </div>
+
+                <!-- Item -->
+                <div class="col">
+                  <h2 class="mb-0">
+                    4.5<span class="text-primary mb-0">M</span>
+                  </h2>
+                  <p class="mb-0">
+                    View this project got across our social media network
+                  </p>
+                </div>
+
+                <!-- Item -->
+                <div class="col">
+                  <h2 class="mb-0">
+                    {{ currency }}12.8<span class="text-primary mb-0">M</span>
+                  </h2>
+                  <p class="mb-0">Total raised in funding so far</p>
+                </div>
+              </div>
+              <!-- Skillset END -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="col-12 mt-6">
+          <div class="card card-body bg-light p-sm-5">
+            <!-- Quote -->
+            <h5 class="display-4 opacity-3 text-primary lh-0 mb-0">
+              <i class="bi bi-quote"></i>
+            </h5>
+            <q class="fs-5 heading-color"
+              >Too months nay end change relied who beauty wishes matter. Shew
+              of john real park so rest we on. Ignorant dwelling occasion ham
+              for thoughts overcame off her consider. Polite it elinor is
+              depend.</q
+            >
+            <!-- Avatar -->
+            <div class="d-flex align-items-center mt-4">
+              <!-- Avatar -->
+              <div class="avatar">
+                <img
+                  class="avatar-img rounded-circle"
+                  src="assets/images/avatar/02.jpg"
+                  alt="avatar"
+                />
+              </div>
+              <!-- Info -->
+              <div class="ms-3">
+                <h6 class="mb-0">Emma Watson</h6>
+                <small>CEO, Co-founder</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row END -->
+    </div>
+  </section>
+  <section class="pt-0">
+    <div class="container">
+      <!-- Title -->
+      <div class="text-center mb-4 mb-sm-6">
+        <h3 class="mb-0">Related works</h3>
+      </div>
+
+      <!-- Slider START -->
+      <div class="swiper">
+        <swiper-container
+          class="swiper-wrapper"
+          init="false"
+          [config]="workSwiper"
+        >
+          <!-- Slider item -->
+          <swiper-slide class="swiper-slide">
+            <div class="card card-img-scale bg-transparent overflow-hidden">
+              <!-- Logo -->
+              <div class="position-absolute top-0 start-0 z-index-1">
+                <img
+                  src="assets/images/client/client-white/03.svg"
+                  class="h-40px m-4"
+                  alt="Client-img"
+                />
+              </div>
+
+              <div class="card-img-scale-wrapper rounded-3">
+                <!-- Card Image -->
+                <img
+                  src="assets/images/portfolio/showcase/03.jpg"
+                  class="img-scale"
+                  alt="portfolio-img"
+                />
+              </div>
+              <!-- Card body -->
+              <div class="card-body px-0 pb-0">
+                <h5 class="mb-0">
+                  <a
+                    routerLink="/portfolio/case-study/v2"
+                    class="heading-color stretched-link"
+                    >Brushstrokes and Beyond</a
+                  >
+                </h5>
+                <small>UI/UX design</small>
+              </div>
+            </div>
+          </swiper-slide>
+
+          <!-- Slider item -->
+          <swiper-slide class="swiper-slide">
+            <div class="card card-img-scale bg-transparent overflow-hidden">
+              <!-- Logo -->
+              <div class="position-absolute top-0 start-0 z-index-1">
+                <img
+                  src="assets/images/client/client-white/04.svg"
+                  class="h-40px m-4"
+                  alt="Client-img"
+                />
+              </div>
+
+              <div class="card-img-scale-wrapper rounded-3">
+                <!-- Card Image -->
+                <img
+                  src="assets/images/portfolio/showcase/02.jpg"
+                  class="img-scale"
+                  alt="portfolio-img"
+                />
+              </div>
+              <!-- Card body -->
+              <div class="card-body px-0 pb-0">
+                <h5 class="mb-0">
+                  <a
+                    routerLink="/portfolio/case-study/v1"
+                    class="heading-color stretched-link"
+                    >Ceremony Worthy of Time</a
+                  >
+                </h5>
+                <small>Web design</small>
+              </div>
+            </div>
+          </swiper-slide>
+
+          <!-- Slider item -->
+          <swiper-slide class="swiper-slide">
+            <div class="card card-img-scale bg-transparent overflow-hidden">
+              <!-- Logo -->
+              <div class="position-absolute top-0 start-0 z-index-1">
+                <img
+                  src="assets/images/client/client-white/01.svg"
+                  class="h-40px m-4"
+                  alt="Client-img"
+                />
+              </div>
+
+              <div class="card-img-scale-wrapper rounded-3">
+                <!-- Card Image -->
+                <img
+                  src="assets/images/portfolio/showcase/05.jpg"
+                  class="img-scale"
+                  alt="portfolio-img"
+                />
+              </div>
+              <!-- Card body -->
+              <div class="card-body px-0 pb-0">
+                <h5 class="mb-0">
+                  <a
+                    routerLink="/portfolio/case-study/v2"
+                    class="heading-color stretched-link"
+                    >The Art of Storytelling</a
+                  >
+                </h5>
+                <small>Graphics design</small>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+
+        <!-- Slider Pagination -->
+        <div
+          class="swiper-pagination swiper-pagination-primary position-relative mt-4"
+        ></div>
+      </div>
+      <!-- Slider END -->
+    </div>
+  </section>
+</main>
+
+<app-footer1 />

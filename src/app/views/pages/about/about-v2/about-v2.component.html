@@ -1,0 +1,22 @@
+<sticky-header-component [headerClass]="'header-sticky header-absolute'">
+  <app-horizontal-menu
+    [ulClassName]="'mx-auto'"
+    [docShow]="true"
+    [showSignUp]="true"
+    [showBuyNow]="true"
+  />
+</sticky-header-component>
+
+<main>
+  <aboutV2-banner />
+
+  <aboutV2-content />
+
+  <aboutV2-testimonials />
+
+  <aboutV2-location />
+
+  <aboutV2-faqs />
+</main>
+
+<app-footer2 data-bs-theme="dark" theme="dark" />

@@ -1,0 +1,87 @@
+<!-- Subscribe box -->
+<div class="card card-body bg-light p-4">
+  <!-- Svg icon -->
+  <svg
+    class="mb-3"
+    width="50"
+    height="50"
+    viewBox="0 0 50 50"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clip-path="url(#clip0_1113_392)">
+      <path
+        class="fill-primary"
+        d="M22.5492 24.7427C23.8548 25.6131 26.1456 25.6132 27.4515 24.7426C27.4517 24.7425 27.452 24.7423 27.4522 24.7422L49.7048 9.90706C48.9749 7.79611 46.9686 6.27539 44.6128 6.27539H5.38754C3.03156 6.27539 1.0254 7.79611 0.29541 9.90706L22.5485 24.7423C22.5488 24.7425 22.549 24.7425 22.5492 24.7427Z"
+      />
+      <path
+        class="fill-mode"
+        d="M29.077 27.1812C29.0767 27.1814 29.0765 27.1816 29.0763 27.1817C27.9335 27.9435 26.4665 28.3244 25 28.3244C23.5332 28.3244 22.0668 27.9436 20.9239 27.1816C20.9237 27.1815 20.9236 27.1814 20.9234 27.1813L0 13.2324V38.3373C0 41.3077 2.41672 43.7244 5.38735 43.7244H44.6128C47.5834 43.7244 50 41.3077 50 38.3373V13.2324L29.077 27.1812Z"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_1113_392">
+        <rect width="50" height="50" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+  <!-- Title -->
+  <h6 class="mb-3">Get the latest Mizzle article delivered to your inbox</h6>
+  <!-- Newsletter -->
+  <form>
+    <input type="email" class="form-control mb-2" placeholder="Email address" />
+    <button type="submit" class="btn btn-dark mb-0">Subscribe</button>
+  </form>
+</div>
+
+<!-- Advertisement -->
+<div class="card text-bg-dark mt-5">
+  <img src="assets/images/blog/adv.jpg" class="card-img" alt="adv image" />
+  <div class="card-img-overlay">
+    <h5 class="card-title">Advertisement</h5>
+  </div>
+</div>
+
+<!-- Social button -->
+<div class="mt-5">
+  <h6 class="mb-3">Follow us on:</h6>
+  <ul class="list-inline mb-0">
+    <li class="list-inline-item pe-1">
+      <a class="btn btn-round bg-facebook" href="javascript:void(0);"
+        ><i class="fab fa-fw fa-facebook-f lh-base"></i
+      ></a>
+    </li>
+    <li class="list-inline-item pe-1">
+      <a class="btn btn-round bg-instagram" href="javascript:void(0);"
+        ><i class="fab fa-fw fa-instagram lh-base"></i
+      ></a>
+    </li>
+    <li class="list-inline-item pe-1">
+      <a class="btn btn-round bg-twitter" href="javascript:void(0);"
+        ><i class="fab fa-fw fa-twitter lh-base"></i
+      ></a>
+    </li>
+    <li class="list-inline-item pe-1">
+      <a class="btn btn-round bg-linkedin" href="javascript:void(0);"
+        ><i class="fab fa-fw fa-linkedin-in lh-base"></i
+      ></a>
+    </li>
+    <li class="list-inline-item pe-1">
+      <a class="btn btn-round bg-youtube" href="javascript:void(0);"
+        ><i class="fab fa-fw fa-youtube lh-base"></i
+      ></a>
+    </li>
+  </ul>
+</div>
+
+<!-- Popular tags -->
+<div class="align-items-center mt-5">
+  <h6 class="mb-3 d-inline-block">Popular Tags:</h6>
+  <ul class="list-inline mb-0 social-media-btn">
+    @for (tag of popularTags; track $index) {
+      <li class="list-inline-item pe-1">
+        <a class="btn btn-light btn-sm" href="javascript:void(0);">{{ tag }}</a>
+      </li>
+    }
+  </ul>
+</div>

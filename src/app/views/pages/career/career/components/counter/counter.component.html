@@ -1,0 +1,32 @@
+<section class="pt-0">
+  <div class="container">
+    <div class="row row-cols-2 row-cols-lg-4 g-4">
+      <!-- Item -->
+      @for (data of counterList; track $index) {
+        <div class="col">
+          <div class="d-flex align-items-center">
+            <!-- Icon -->
+            <div class="icon-lg bg-dark rounded text-white flex-shrink-0">
+              <i class="bi {{ data.icon }} fs-5"></i>
+            </div>
+            <!-- Content -->
+            <div class="ms-3">
+              <div class="d-flex">
+                <h5
+                  class="purecounter mb-0"
+                  data-purecounter-start="0"
+                  [countUp]="data.stat"
+                  data-purecounter-delay="300"
+                >
+                  0
+                </h5>
+                <span class="h5 text-primary mb-0">{{ data.suffix }}</span>
+              </div>
+              <p class="mb-0">{{ data.label }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

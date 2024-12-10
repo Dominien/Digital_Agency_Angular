@@ -1,0 +1,111 @@
+<div class="card bg-transparent rounded-3">
+  <!-- Card header -->
+  <div class="card-header bg-transparent border-bottom px-0 pt-0">
+    <h5 class="card-header-title mb-0">Transition history</h5>
+  </div>
+  <!-- Card body -->
+  <div class="card-body px-0 mt-3">
+    <!-- Search and select -->
+    <div class="row g-3 align-items-center justify-content-between mb-4">
+      <!-- Content -->
+      <div class="col-md-8">
+        <form class="rounded position-relative">
+          <input
+            class="form-control pe-5 bg-transparent"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button
+            class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+            type="submit"
+          >
+            <i class="fas fa-search fs-6"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Select option -->
+      <div class="col-md-3">
+        <!-- Short by filter -->
+        <form>
+          <select class="form-select z-index-9 bg-transparent">
+            <option value="">Sort by</option>
+            <option>Newest</option>
+            <option>Oldest</option>
+          </select>
+        </form>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-responsive border-0">
+      <table class="table align-middle p-4 mb-0 table-hover">
+        <!-- Table head -->
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" class="border-0 text-white rounded-start">
+              Reference
+            </th>
+            <th scope="col" class="border-0 text-white">Payment method</th>
+            <th scope="col" class="border-0 text-white">Status</th>
+            <th scope="col" class="border-0 text-white">Amount</th>
+            <th scope="col" class="border-0 text-white">Date</th>
+            <th scope="col" class="border-0 text-white rounded-end">Action</th>
+          </tr>
+        </thead>
+
+        <!-- Table body START -->
+        <tbody>
+          @for (data of transitionList; track $index) {
+            <tr>
+              <td>
+                <a href="javascript:void(0);">{{ data.reference }}</a>
+              </td>
+
+              <td>
+                <img
+                  [src]="
+                    data.type == 'visa'
+                      ? 'assets/images/elements/visa.svg'
+                      : 'assets/images/elements/mastercard.svg'
+                  "
+                  class="h-20px"
+                  alt=""
+                /><span class="ms-2">****{{ data.number }}</span>
+              </td>
+
+              <td>
+                <div
+                  class="badge bg-opacity-15"
+                  [ngClass]="{
+                    'bg-warning text-warning': data.status == 'pending',
+                    'bg-danger text-danger': data.status == 'cancel',
+                    'bg-success text-success': data.status == 'paid',
+                  }"
+                >
+                  {{ data.status | sentenceCase }}
+                </div>
+              </td>
+
+              <td>{{ currency }}{{ data.amount }}</td>
+
+              <td>{{ data.date }}</td>
+              <td>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-light border btn-round me-1 mb-1 mb-md-0"
+                  placement="top"
+                  ngbTooltip="Download"
+                  ><i class="bi bi-download"></i
+                ></a>
+              </td>
+            </tr>
+          }
+          <!-- Table row -->
+        </tbody>
+        <!-- Table body END -->
+      </table>
+    </div>
+  </div>
+</div>

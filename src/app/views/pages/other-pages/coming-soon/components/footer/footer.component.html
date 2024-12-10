@@ -1,0 +1,30 @@
+<footer>
+  <div class="container mb-4 mb-md-2">
+    <!-- Bottom footer -->
+    <div
+      class="d-md-flex justify-content-between align-items-center text-center text-lg-start"
+    >
+      <!-- copyright text -->
+      <div class="mb-3 mb-md-0">
+        Copyrights ©{{ currentYear }} Mizzle. Build by
+        <a
+          href="{{ creditsTo.website }}"
+          class="text-body text-primary-hover"
+          >{{ creditsTo.name }}</a
+        >.
+      </div>
+
+      <ul class="list-inline mb-0">
+        @for (item of socialMediaLinks; track $index) {
+          <li class="list-inline-item pe-1">
+            <a
+              class="btn btn-xs btn-icon btn-light mb-0"
+              href="javascript:void(0);"
+              ><i class="fab fa-fw {{ item.icon }} lh-base"></i
+            ></a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</footer>

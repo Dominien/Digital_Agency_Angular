@@ -1,0 +1,56 @@
+<section class="pt-0">
+  <div class="container">
+    <!-- Title -->
+    <div class="d-flex justify-content-between text-center mb-4 mb-sm-6">
+      <h3 class="mb-0">Related blogs</h3>
+
+      <!-- Slider arrow -->
+      <div>
+        <a
+          href="javascript:void(0);"
+          class="btn btn-light border btn-icon btn-lg rounded-circle mb-0 swiper-button-prev me-1"
+          ><i class="bi bi-arrow-left"></i
+        ></a>
+        <a
+          href="javascript:void(0);"
+          class="btn btn-light border btn-icon btn-lg rounded-circle mb-0 swiper-button-next"
+          ><i class="bi bi-arrow-right"></i
+        ></a>
+      </div>
+    </div>
+
+    <!-- Slider START -->
+    <div class="swiper">
+      <swiper-container
+        [config]="swiperConfig"
+        init="false"
+        class="swiper-wrapper"
+      >
+        <!-- Slider item -->
+        @for (data of blogList; track $index) {
+          <swiper-slide class="swiper-slide">
+            <article class="card bg-transparent">
+              <!-- Image -->
+              <img [src]="data.image" class="card-img" alt="blog-img" />
+              <div class="card-body px-0 pb-0">
+                <h6 class="card-title">{{ data.title }}</h6>
+                <div class="d-flex justify-content-between align-items-center">
+                  <p class="mb-0">
+                    By {{ data.publishedBy.firstName }}
+                    {{ data.publishedBy.lastName }}
+                  </p>
+                  <a
+                    class="icon-link icon-link-hover stretched-link"
+                    routerLink="/blog/single/v1"
+                    >Read more<i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </swiper-slide>
+        }
+      </swiper-container>
+    </div>
+    <!-- Slider END -->
+  </div>
+</section>

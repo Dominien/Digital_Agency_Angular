@@ -1,0 +1,24 @@
+<sticky-header-component
+  headerClass="header-sticky header-absolute"
+  mode="dark"
+>
+  <app-horizontal-menu
+    ulClassName="mx-auto"
+    data-bs-theme="dark"
+    [docShow]="true"
+    [showSignUp]="true"
+    [showBuyNow]="true"
+  />
+</sticky-header-component>
+
+<main class="price-wrap">
+  <pricing-hero />
+
+  <pricing-feature />
+
+  <pricing-cta />
+
+  <pricing-faq />
+</main>
+
+<app-footer1 />

@@ -1,0 +1,59 @@
+<section class="pb-0">
+  <div class="container" data-sticky-container>
+    <div class="row">
+      <!-- Title and content -->
+      <div class="col-lg-4 mb-5">
+        <div
+          ng-sticky
+          class="sticky-element"
+          data-sticky
+          data-sticky
+          data-margin-top="80"
+          data-sticky-for="576"
+        >
+          <h2 class="mb-4">Giving your business some great ideas</h2>
+          <p class="mb-4">
+            With the support of our result-driven team, you can solve many
+            challenges.
+          </p>
+          <div class="text-center d-inline-block bg-dark rounded px-5 py-3">
+            <span class="text-white me-1">Work with us?</span>
+            <a class="ms-2" href="javascript:void(0);"
+              >Contact us now<span class="bi-chevron-right small ms-1"></span
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 ps-xl-7">
+        <div class="row g-4 g-sm-5">
+          <!-- Card item -->
+          @for (data of servicesList; track $index) {
+            <div class="col-md-6">
+              <div class="card border bg-light p-5">
+                <!-- Card header -->
+                <div class="card-header bg-light p-0 mb-4">
+                  <!-- Icon -->
+                  <figure
+                    class="text-primary"
+                    [innerHTML]="data.sanitizedIcon"
+                  ></figure>
+                </div>
+
+                <div class="card-body p-0">
+                  <h5 class="mb-3">
+                    <a routerLink="/services/single" class="stretched-link">{{
+                      data.title
+                    }}</a>
+                  </h5>
+                  <p class="mb-0">{{ data.description }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+        <!-- Row END -->
+      </div>
+    </div>
+  </div>
+</section>

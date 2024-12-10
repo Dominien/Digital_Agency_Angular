@@ -1,0 +1,29 @@
+<section class="pb-0">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <h5 class="pe-6">100+ Companies trust us</h5>
+      </div>
+
+      <div class="col-md-9">
+        <!-- Slider START -->
+        <div class="swiper">
+          <!-- Slider items -->
+          <swiper-container
+            class="swiper-wrapper align-items-center"
+            [config]="clientConfig"
+            init="false"
+          >
+            @for (item of clientTestimonialData; track $index) {
+              <swiper-slide class="swiper-slide">
+                <img [src]="item.image" class="grayscale" alt="client-img" />
+              </swiper-slide>
+            }
+          </swiper-container>
+        </div>
+        <!-- Slider END -->
+      </div>
+    </div>
+    <!-- Row END -->
+  </div>
+</section>

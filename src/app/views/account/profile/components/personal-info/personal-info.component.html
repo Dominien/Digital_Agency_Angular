@@ -1,0 +1,168 @@
+<form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
+  <div class="card bg-transparent p-0">
+    <!-- Card header -->
+    <div class="card-header bg-transparent border-bottom p-0 pb-3">
+      <h6 class="mb-0">Personal Information</h6>
+    </div>
+
+    <!-- Card body -->
+    <div class="card-body px-0">
+      <div class="row g-4">
+        <!-- Profile photo -->
+        <div class="col-12">
+          <label class="form-label">Profile picture</label>
+          <div class="d-flex align-items-center">
+            <label class="position-relative me-2" title="Replace this pic">
+              <!-- Avatar place holder -->
+              <span class="avatar avatar-xl">
+                <img
+                  class="avatar-img rounded-circle border border-white border-3 shadow"
+                  src="assets/images/avatar/07.jpg"
+                  alt=""
+                />
+              </span>
+              <!-- Remove btn -->
+              <button class="uploadremove">
+                <i class="bi bi-x text-white"></i>
+              </button>
+            </label>
+            <!-- Upload button -->
+            <label class="btn btn-sm btn-dark mb-0">Change</label>
+            <input class="form-control d-none" type="file" />
+          </div>
+        </div>
+        <!-- Full name -->
+        <div class="col-12">
+          <label class="form-label">Full name</label>
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="fname"
+              [ngClass]="{ 'is-invalid': submitted && form['fname'].errors }"
+              placeholder="First name"
+            />
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lname"
+              [ngClass]="{ 'is-invalid': submitted && form['lname'].errors }"
+              placeholder="Last name"
+            />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-6">
+          <label class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            [ngClass]="{ 'is-invalid': submitted && form['email'].errors }"
+            placeholder="Enter your email id"
+          />
+          <div class="invalid-feedback">email must be a valid email</div>
+        </div>
+
+        <!-- Mobile -->
+        <div class="col-md-6">
+          <label class="form-label">Mobile number</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="number"
+            minlength="10"
+            [ngClass]="{ 'is-invalid': submitted && form['number'].errors }"
+            placeholder="Enter your mobile number"
+          />
+          <div class="invalid-feedback">
+            Mobile number must be of 10 digits only
+          </div>
+        </div>
+
+        <!-- Nationality -->
+        <div class="col-md-6">
+          <label class="form-label">Nationality</label>
+          <select class="form-select" formControlName="nationality">
+            <option value="">Select your country</option>
+            <option>USA</option>
+            <option selected>Paris</option>
+            <option>India</option>
+            <option>UK</option>
+          </select>
+        </div>
+
+        <!-- Gender -->
+        <div class="col-md-6">
+          <label class="form-label">Select Gender</label>
+          <div class="input-group">
+            <div class="form-control">
+              <div class="form-check radio-bg-light">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  formControlName="gender"
+                  value="male"
+                  id="flexRadioDefault1"
+                />
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Male
+                </label>
+              </div>
+            </div>
+
+            <div class="form-control">
+              <div class="form-check radio-bg-light">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  formControlName="gender"
+                  value="female"
+                  id="flexRadioDefault2"
+                />
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Female
+                </label>
+              </div>
+            </div>
+
+            <div class="form-control">
+              <div class="form-check radio-bg-light">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  formControlName="gender"
+                  value="others"
+                  id="flexRadioDefault3"
+                />
+                <label class="form-check-label" for="flexRadioDefault3">
+                  Others
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="col-12">
+          <label class="form-label">Address</label>
+          <textarea
+            class="form-control"
+            rows="3"
+            formControlName="address"
+            [ngClass]="{ 'is-invalid': submitted && form['address'].errors }"
+            spellcheck="false"
+          ></textarea>
+        </div>
+
+        <!-- Button -->
+        <div class="col-12 text-end">
+          <button type="submit" class="btn btn-primary mb-0">
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

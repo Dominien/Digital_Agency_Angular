@@ -1,0 +1,31 @@
+<section class="pt-0">
+  <div class="container">
+    <!-- Title -->
+    <div class="inner-container-small text-center mb-4 mb-sm-5">
+      <h2 class="mb-4">Understanding of your website's impact</h2>
+      <p class="mb-4">
+        There is nothing that can stop you from achieving what you want, except
+        yourself. If you devote yourself to it you will achieve your goal.
+      </p>
+    </div>
+
+    <div class="row justify-content-center g-sm-6">
+      <!-- Feature item -->
+      @for (data of featuresList; track $index) {
+        <div class="col-sm-6 col-lg-4 mb-5 mb-sm-0">
+          <div class="card card-body text-center bg-transparent p-0">
+            <!-- Icon -->
+            <figure
+              class="text-primary mb-4"
+              [innerHTML]="data.sanitizedIcon"
+            ></figure>
+            <!-- Title -->
+            <h5 class="mb-3">{{ data.title }}</h5>
+            <p class="mb-0">{{ data.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+    <!-- Row END -->
+  </div>
+</section>

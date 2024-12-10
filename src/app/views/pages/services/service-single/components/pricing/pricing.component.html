@@ -1,0 +1,160 @@
+<section class="pt-0">
+  <div class="container">
+    <div class="row">
+      <!-- Pricing -->
+      <div class="col-lg-6 mb-6 mb-lg-0">
+        <div
+          class="card bg-dark overflow-hidden p-sm-4 h-100"
+          data-bs-theme="dark"
+        >
+          <!-- Card header -->
+          <div class="card-header bg-transparent position-relative mb-3">
+            <h3 class="mb-3">Pricing plan for this service</h3>
+            <p>
+              Our essential plan is self-service solution for businesses to
+              handle website messaging and personalization
+            </p>
+            <!-- Tabs -->
+
+            <ul
+              ngbNav
+              #nav="ngbNav"
+              class="nav nav-pills gap-1 nav-pills-primary"
+            >
+              @for (data of pricingList; track $index) {
+                <li ngbNavItem class="nav-item" role="presentation">
+                  <button
+                    ngbNavLink
+                    class="nav-link"
+                    id="pills-monthly-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-monthly"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-monthly"
+                    aria-selected="true"
+                  >
+                    {{ data.duration }}
+                  </button>
+                  <ng-template ngbNavContent>
+                    <div
+                      class="tab-pane show"
+                      id="pills-monthly"
+                      role="tabpanel"
+                      aria-labelledby="pills-monthly-tab"
+                      tabindex="0"
+                    >
+                      <div class="bg-light border rounded p-3">
+                        <h6 class="mb-3">Quick look at all the features</h6>
+                        <!-- List -->
+                        <ul class="list-group list-group-borderless">
+                          @for (feature of data.features; track feature) {
+                            <li class="list-group-item mb-0">
+                              <i
+                                class="bi bi-patch-check-fill text-primary me-2"
+                              ></i
+                              >{{ feature }}
+                            </li>
+                          }
+                        </ul>
+                      </div>
+                      <!-- Pricing -->
+                      <div
+                        class="d-sm-flex justify-content-between align-items-center mt-4"
+                      >
+                        <!-- Price -->
+                        <div class="mb-3 mb-sm-0 heading-color">
+                          <span class="h3">{{ currency }}{{ data.price }}</span>
+                          / month
+                        </div>
+                        <!-- Button -->
+                        <a
+                          href="javascript:void(0);"
+                          class="btn btn-lg btn-white mb-0"
+                          >Get started</a
+                        >
+                      </div>
+                    </div>
+                  </ng-template>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <!-- Card body -->
+          <div class="card-body pt-0">
+            <!-- Tab content START -->
+            <div
+              [ngbNavOutlet]="nav"
+              class="tab-content"
+              id="pills-tabContent"
+            ></div>
+            <!-- Tab content END -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 ms-auto">
+        <h2>Feedback for Service Enhancement</h2>
+        <p class="lead mb-2">
+          300+ Users rated us <span class="text-primary fw-bold">4.85</span> out
+          of 5.
+        </p>
+        <!-- Testimonials START -->
+        <div class="swiper mt-7">
+          <swiper-container
+            [config]="swiperConfig"
+            init="false"
+            class="swiper-wrapper pb-5"
+          >
+            <!-- Review item -->
+            @for (data of testimonialData; track $index) {
+              <swiper-slide class="swiper-slide">
+                <!-- Avatar image -->
+                <div class="avatar avatar-lg mb-3">
+                  <img
+                    class="avatar-img rounded-circle"
+                    [src]="data.user.avatar"
+                    alt="avatar"
+                  />
+                </div>
+                <!-- Rating star -->
+                <ul class="list-inline mb-3">
+                  <ng-template #t let-fill="fill">
+                    <i class="bi bi-star-fill">
+                      @if (fill > 0) {
+                        <i
+                          class="bi bi-star-fill filled"
+                          [style.width.%]="fill"
+                        ></i>
+                      }
+                    </i>
+                  </ng-template>
+
+                  <ngb-rating
+                    [(rate)]="data.rating"
+                    [starTemplate]="t"
+                    [readonly]="true"
+                    [max]="5"
+                  />
+                </ul>
+                <!-- Content -->
+                <p class="fs-5 heading-color">"{{ data.comment }}"</p>
+                <!-- Name -->
+                <div class="blockquote-footer mb-0 fs-6 mt-3">
+                  {{ data.user.firstName }} {{ data.user.lastName }}
+                </div>
+              </swiper-slide>
+            }
+          </swiper-container>
+
+          <!-- Pagination -->
+          <div
+            class="swiper-pagination swiper-pagination-primary position-relative text-start"
+          ></div>
+        </div>
+        <!-- Testimonials END -->
+      </div>
+    </div>
+  </div>
+</section>

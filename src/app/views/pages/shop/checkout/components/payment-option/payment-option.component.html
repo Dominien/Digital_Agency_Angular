@@ -1,0 +1,169 @@
+<div class="card bg-transparent">
+  <!-- Card header -->
+  <div class="card-header bg-transparent border-bottom px-0">
+    <h5>Payment options</h5>
+  </div>
+
+  <!-- Card body -->
+  <div class="card-body px-0">
+    <div class="row g-4">
+      <!-- Options item -->
+      @for (data of paymentOptions; track $index) {
+        <div class="col-md-6 col-lg-12 col-xl-6">
+          <div class="form-check border rounded p-3">
+            <div class="d-flex justify-content-between">
+              <label
+                class="form-check-label d-flex align-items-start pe-4"
+                for="standard"
+              >
+                @if (data.icon) {
+                  <span class="w-40px"
+                    ><i class="bi {{ data.icon }} fs-5"></i
+                  ></span>
+                } @else {
+                  <img [src]="data.image" class="w-40px me-3 mt-1" alt="" />
+                }
+                <span>
+                  <span class="d-block fw-semibold heading-color mb-1">{{
+                    data.title
+                  }}</span>
+                  <span class="d-block small">{{ data.subTitle }}</span>
+                </span>
+              </label>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="payOptions"
+                id="standard"
+                [checked]="$index == 0"
+              />
+            </div>
+
+            <div class="d-flex justify-content-end gap-3 mt-3">
+              <a
+                href="javascript:void(0);"
+                class="text-body-secondary text-primary-hover small"
+                >Set as default</a
+              >
+              @if (data.image) {
+                <a
+                  href="javascript:void(0);"
+                  (click)="openModal(editCardModal)"
+                  class="heading-color text-primary-hover fw-semibold small"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editcard"
+                  ><i class="bi bi-pencil-square me-1"></i>Edit</a
+                >
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+<ng-template #editCardModal let-modal>
+  <!-- Modal header -->
+  <div class="modal-header px-4 d-flex justify-content-between">
+    <h5 class="modal-title" id="editCardLabel">Edit card</h5>
+    <button
+      type="button"
+      class="btn btn-sm btn-light mb-0"
+      (click)="modal.dismiss()"
+    >
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+  <!-- Modal body -->
+  <div class="modal-body p-4">
+    <form class="row g-4">
+      <!-- Card number -->
+      <div class="col-12">
+        <label class="form-label">Card Number</label>
+        <div class="position-relative">
+          <input
+            type="text"
+            class="form-control"
+            maxlength="16"
+            value="2456 2588 4589 7895"
+            placeholder="xxxx xxxx xxxx xxxx"
+          />
+          <img
+            src="assets/images/elements/visa.svg"
+            class="w-40px position-absolute top-50 end-0 translate-middle-y me-2"
+            alt=""
+          />
+        </div>
+      </div>
+      <!-- Expiration Date -->
+      <div class="col-md-6">
+        <label class="form-label">Expiration date</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            maxlength="2"
+            value="08"
+            placeholder="Month"
+          />
+          <input
+            type="text"
+            class="form-control"
+            maxlength="4"
+            value="2024"
+            placeholder="Year"
+          />
+        </div>
+      </div>
+      <!--Cvv code  -->
+      <div class="col-md-6">
+        <label class="form-label">CVV / CVC</label>
+        <input
+          type="text"
+          class="form-control"
+          maxlength="3"
+          value="565"
+          placeholder="xxx"
+        />
+      </div>
+      <!-- Card name -->
+      <div class="col-12">
+        <label class="form-label">Name on Card</label>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="name of card holder"
+          value="Jacqueline Miller"
+          placeholder="Name of card holder"
+        />
+      </div>
+      <!-- Check box -->
+      <div class="col-md-12">
+        <div class="form-check mb-0">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Secuarely save card and details</label
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- Modal footer -->
+  <div class="modal-footer px-4">
+    <button
+      type="button"
+      class="btn btn-white border my-0"
+      (click)="modal.dismiss()"
+    >
+      Close
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary my-0"
+      (click)="modal.dismiss()"
+    >
+      Save change
+    </button>
+  </div>
+</ng-template>

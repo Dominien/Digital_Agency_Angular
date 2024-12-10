@@ -1,0 +1,48 @@
+<section>
+  <div class="container">
+    <div class="row g-4 g-sm-6">
+      @for (data of memberList; track $index) {
+        <div class="col-sm-6 col-md-4 col-xl-3">
+          <div class="card card-img-scale bg-transparent overflow-hidden">
+            <!-- Social links -->
+            <div class="position-absolute top-0 end-0 z-index-2 m-3">
+              <ul class="list-inline mb-0 mb-2 mb-sm-0">
+                @for (
+                  item of data.socialMedia;
+                  track item;
+                  let first = $first
+                ) {
+                  <li class="list-inline-item" [ngClass]="{ 'ms-1': !first }">
+                    <a
+                      class="btn-icon btn-sm rounded mb-2 bg-{{ item.variant }}"
+                      href="javascript:void(0);"
+                      ><i class="fab fa-fw {{ item.icon }}"></i
+                    ></a>
+                  </li>
+                }
+              </ul>
+            </div>
+            <div class="card-img-scale-wrapper rounded-3">
+              <!-- Card Image -->
+              <img
+                [src]="data.user.avatar"
+                class="img-scale"
+                alt="card image"
+              />
+            </div>
+            <!-- Card body -->
+            <div class="card-body text-center px-0 pb-0">
+              <h6 class="mb-0">
+                <a href="javascript:void(0);" class="stretched-link"
+                  >{{ data.user.firstName }} {{ data.user.lastName }}</a
+                >
+              </h6>
+              <small>{{ data.user.role }}</small>
+            </div>
+          </div>
+        </div>
+      }
+      <!-- Team item -->
+    </div>
+  </div>
+</section>

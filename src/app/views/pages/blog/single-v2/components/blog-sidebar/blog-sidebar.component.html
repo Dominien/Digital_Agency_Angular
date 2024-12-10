@@ -1,0 +1,54 @@
+<div class="card card-body d-inline-block bg-light border p-4">
+  <!-- Avatar and info -->
+  <div class="d-flex align-items-center mb-3">
+    <!-- Avatar -->
+    <div class="avatar avatar-lg flex-shrink-0 me-2">
+      <img
+        class="avatar-img rounded-circle"
+        src="assets/images/avatar/09.jpg"
+        alt="avatar"
+      />
+    </div>
+    <div class="ms-2">
+      <h6 class="mb-0"><a href="javascript:void(0);">Louis Crawford</a></h6>
+      <small>Content creator</small>
+    </div>
+  </div>
+  <p>
+    Incorporating gratitude into our daily where we write down three things we
+    are grateful for each day.
+  </p>
+  <!-- Button -->
+  <a href="javascript:void(0);" class="btn btn-sm btn-outline-primary mb-0"
+    >Follow author</a
+  >
+</div>
+
+<!-- Related post -->
+<div class="align-items-center mt-5">
+  <h6 class="mb-3 d-inline-block">Related post:</h6>
+
+  <ul class="list-group list-group-flush">
+    @for (post of relatedPost; track $index) {
+      <li class="list-group-item ps-0">
+        <a
+          href="javascript:void(0);"
+          class="heading-color text-primary-hover fw-semibold"
+          >{{ post }}</a
+        >
+      </li>
+    }
+  </ul>
+</div>
+
+<!-- Popular tags -->
+<div class="align-items-center mt-5">
+  <h6 class="mb-3 d-inline-block">Popular Tags:</h6>
+  <ul class="list-inline mb-0">
+    @for (tag of popularTags; track $index) {
+      <li class="list-inline-item pe-1">
+        <a class="btn btn-light btn-sm" href="javascript:void(0);">{{ tag }}</a>
+      </li>
+    }
+  </ul>
+</div>

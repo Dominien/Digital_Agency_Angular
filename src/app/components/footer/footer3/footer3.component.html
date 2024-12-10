@@ -1,0 +1,148 @@
+<footer
+  class="bg-dark position-relative overflow-hidden pt-6"
+  data-bs-theme="dark"
+>
+  <div class="container position-relative mt-5">
+    <!-- Widgets -->
+    <div class="row g-4">
+      <!-- Widget 1 START -->
+      <div class="col-xl-3 text-lg-center text-xl-start mb-4 mb-xl-0">
+        <!-- logo -->
+        <a routerLink="/">
+          <img
+            class="light-mode-item h-40px"
+            src="assets/images/logo.svg"
+            alt="logo"
+          />
+          <img
+            class="dark-mode-item h-40px"
+            src="assets/images/logo-light.svg"
+            alt="logo"
+          />
+        </a>
+      </div>
+      <!-- Widget 1 END -->
+
+      <!-- Widget START -->
+      <div class="col-6 col-md-4 col-lg-5 col-xl-4">
+        <h6 class="mb-2 mb-md-4">Quick links</h6>
+        <div class="row g-0">
+          <div class="col-lg-6">
+            <ul class="nav flex-column">
+              @for (link of quickLinks; track $index; let first = $first) {
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    [ngClass]="{ 'pt-0': first }"
+                    routerLink="/about/v1"
+                    >{{ link.name }}
+                    @if (link.badge) {
+                      <span class="badge text-bg-danger ms-2">{{
+                        link.badge
+                      }}</span>
+                    }
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <ul class="nav flex-column">
+              @for (item of quickLinks4; track $index) {
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/contact/v1">{{
+                    item.name
+                  }}</a>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Widget END -->
+
+      <!-- Widget START -->
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <h6 class="mb-2 mb-md-4">Resources</h6>
+        <ul class="nav flex-column">
+          @for (item of communityLinks; track $index) {
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0);"
+                >{{ item.name }}
+                @if (item.icon) {
+                  <i class="bi {{ item.icon }} small ms-1"></i>
+                }
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+      <!-- Widget END -->
+
+      <!-- Widget START -->
+      <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
+        <h6 class="mb-2 mb-md-4">Community</h6>
+        @for (item of communityLinks2; track $index) {
+          <div class="position-relative d-flex align-items-center py-2 my-2">
+            <div
+              class="icon-lg rounded-circle flex-shrink-0 {{ item.variant }}"
+            >
+              <i class="bi {{ item.icon }} heading-color"></i>
+            </div>
+            <div class="nav flex-column ps-3">
+              <h6 class="mb-2">
+                <a href="javascript:void(0);" class="stretched-link p-0">{{
+                  item.title
+                }}</a>
+              </h6>
+              <div class="small text-body-secondary">
+                API, knowledge base, tutorials
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+      <!-- Widget END -->
+    </div>
+
+    <!-- Divider -->
+    <hr class="opacity-1 my-5 my-sm-6" />
+
+    <!-- Contact detail -->
+    <div class="row g-4 align-items-center">
+      <!-- Title -->
+      <div class="col-xl-3 text-lg-center text-xl-start mb-4 mb-xl-0">
+        <h5 class="mb-1">Get in touch with us</h5>
+        <p class="mb-0">We look forward to hearing from you!</p>
+      </div>
+
+      <!-- Mobile number -->
+      @for (item of contactDetails2; track $index) {
+        <div
+          class="col-sm-6 col-md-4 col-xl-3 d-flex justify-content-md-center"
+        >
+          <div class="position-relative d-flex align-items-center">
+            <div class="icon-lg bg-body rounded-circle flex-shrink-0">
+              <i class="bi {{ item.icon }} heading-color"></i>
+            </div>
+            <div class="nav flex-column ps-3">
+              <div class="small text-body-secondary">{{ item.title }}</div>
+              <p class="fw-semibold mt-1 mb-0">
+                <a
+                  href="javascript:void(0);"
+                  class="heading-color text-primary-hover stretched-link p-0"
+                  >{{ item.description }}</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Divider -->
+    <hr class="opacity-1 mt-6 mb-0" />
+
+    <footer-credit-with-social-icons />
+  </div>
+</footer>

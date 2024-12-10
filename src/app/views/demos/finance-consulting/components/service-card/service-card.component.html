@@ -1,0 +1,96 @@
+<Section class="pb-0">
+  <div class="container">
+    <!-- Title -->
+    <div class="row mb-4 mb-md-6">
+      <div class="col-md-6">
+        <h2 class="mb-0">Tailored solutions for your financial needs</h2>
+      </div>
+
+      <div class="col-md-4 ms-auto">
+        <p>
+          We offer a comprehensive range of financial services designed to
+          address your specific goals and aspirations.
+        </p>
+
+        <!-- Slider arrow -->
+        <div class="d-flex gap-3 position-relative mt-3">
+          <a
+            href="javascript:void(0);"
+            class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-prev-team"
+            ><i class="bi bi-arrow-left"></i
+          ></a>
+          <a
+            href="javascript:void(0);"
+            class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-next-team"
+            ><i class="bi bi-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service box START -->
+    <div class="swiper mt-2 mt-md-4">
+      <swiper-container
+        class="swiper-wrapper"
+        [config]="serviceSwiper"
+        init="false"
+      >
+        @for (item of servicesData; track $index) {
+          <!-- Service item -->
+          <swiper-slide class="swiper-slide">
+            <div class="card border p-4">
+              <!-- Card header -->
+              <div class="card-header bg-transparent p-0 pb-4">
+                <figure class="text-primary" [innerHTML]="item?.sanitizedIcon">
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.25 12C2.25 17.3848 6.61522 21.75 12 21.75C16.567 21.75 20.4006 18.6099 21.4597 14.371C21.6257 13.7068 21.7086 13.3746 21.5327 13.0378C21.4825 12.9418 21.3914 12.8252 21.3104 12.7532C21.0263 12.5009 20.6322 12.5009 19.844 12.5009H13.3C12.5501 12.5009 12.1751 12.5009 11.9122 12.3099C11.8273 12.2482 11.7527 12.1736 11.691 12.0887C11.5 11.8258 11.5 11.4508 11.5 10.7009V4.15582C11.5 3.36765 11.5 2.97356 11.2477 2.68947C11.1758 2.60848 11.0591 2.51736 10.9631 2.4672C10.6263 2.29125 10.2942 2.37418 9.63002 2.54005C5.39056 3.59874 2.25 7.43262 2.25 12Z"
+                      fill="currentColor"
+                      fill-opacity="0.25"
+                    ></path>
+                    <path
+                      d="M12.8 9.4V4.25994C12.8 3.42978 12.8 3.0147 13.0698 2.72637C13.1465 2.64435 13.2702 2.55404 13.3717 2.50592C13.7284 2.33679 14.0733 2.44702 14.7632 2.6675C17.8775 3.66283 20.3372 6.12259 21.3326 9.23688C21.553 9.92672 21.6633 10.2716 21.4941 10.6284C21.446 10.7299 21.3557 10.8536 21.2737 10.9303C20.9853 11.2 20.5703 11.2 19.7401 11.2H14.6C13.8501 11.2 13.4751 11.2 13.2123 11.009C13.1274 10.9473 13.0527 10.8727 12.991 10.7878C12.8 10.5249 12.8 10.1499 12.8 9.4Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </figure>
+              </div>
+
+              <!-- Card body -->
+              <div class="card-body p-0">
+                <!-- Title and desc -->
+                <h5>{{ item.title }}</h5>
+
+                <!-- List -->
+                <ul class="list-group list-group-borderless mb-5">
+                  @for (feature of item.features; track $index) {
+                    <li class="list-group-item pb-0 d-flex mb-0">
+                      <i class="bi {{ feature.icon }} me-2"></i
+                      >{{ feature.title }}
+                    </li>
+                  }
+                </ul>
+              </div>
+
+              <!-- Card footer -->
+              <div class="card-footer bg-transparent p-0">
+                <a
+                  class="icon-link icon-link-hover stretched-link"
+                  href="javascript:void(0);"
+                  >Know more<i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </swiper-slide>
+        }
+      </swiper-container>
+    </div>
+    <!-- Service box END -->
+  </div>
+</Section>

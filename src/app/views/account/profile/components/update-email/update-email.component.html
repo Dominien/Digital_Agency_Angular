@@ -1,0 +1,33 @@
+<form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+  <div class="card bg-transparent p-0">
+    <!-- Card header -->
+    <div class="card-header bg-transparent border-bottom px-0">
+      <h6 class="mb-0">Update email</h6>
+    </div>
+
+    <!-- Card body -->
+    <div class="card-body px-0">
+      <!-- Full name -->
+      <div class="mb-4">
+        <p class="mb-4">
+          Your current email address is
+          <span class="text-primary">example&#64;gmail.com</span>
+        </p>
+        <label class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && form['email'].errors }"
+          placeholder="Enter your email id"
+        />
+        <div class="invalid-feedback">Email Address is required</div>
+      </div>
+
+      <!-- Button -->
+      <div class="text-end">
+        <button type="submit" class="btn btn-primary mb-0">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</form>

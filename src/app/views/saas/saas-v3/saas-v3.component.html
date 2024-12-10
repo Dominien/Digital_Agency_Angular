@@ -1,0 +1,23 @@
+<sticky-header-component
+  [headerClass]="'header-sticky header-absolute'"
+  [mode]="'dark'"
+>
+  <app-horizontal-menu
+    [ulClassName]="'mx-auto'"
+    [docShow]="true"
+    [showSignUp]="true"
+    [showBuyNow]="true"
+  />
+</sticky-header-component>
+
+<main>
+  <saas-v3-hero />
+  <saas-v3-features />
+  <saas-v3-statistics />
+  <saas-v3-integration />
+  <saas-v3-pricing />
+  <saas-v3-testimonials />
+  <saas-v3-cta />
+</main>
+
+<app-footer6 />

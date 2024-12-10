@@ -1,0 +1,24 @@
+<sticky-header-component
+  [headerClass]="'header-sticky header-absolute'"
+  [mode]="'dark'"
+>
+  <app-horizontal-menu
+    [containerClass]="false"
+    [darkButton]="true"
+    [logoClass]="'me-5'"
+    text="Let's Connect"
+    [navClass]="'px-lg-5'"
+  />
+</sticky-header-component>
+
+<main>
+  <design-agency-hero />
+  <design-agency-about />
+  <design-agency-services />
+  <design-agency-showcase />
+  <design-agency-testimonial />
+  <design-agency-awards />
+  <design-agency-blog />
+</main>
+
+<app-footer4 />

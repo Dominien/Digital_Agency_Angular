@@ -1,0 +1,27 @@
+<h6 class="mb-4">Blog category</h6>
+<!-- Slider START -->
+<div class="swiper">
+  <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper">
+    <!-- Item -->
+    @for (data of categoryList; track $index) {
+      <swiper-slide class="swiper-slide">
+        <a
+          href="javascript:void(0);"
+          class="card card-img-scale overflow-hidden"
+        >
+          <!-- Card Image -->
+          <img [src]="data.image" class="img-scale" alt="category-img" />
+          <!-- Badge -->
+          <div class="card-img-overlay">
+            <div class="badge text-bg-dark">{{ data.category }}</div>
+          </div>
+        </a>
+      </swiper-slide>
+    }
+  </swiper-container>
+
+  <!-- Slider Pagination -->
+  <div
+    class="swiper-pagination swiper-pagination-primary position-relative mt-4"
+  ></div>
+</div>

@@ -1,0 +1,28 @@
+<sticky-header-component
+  headerClass="header-sticky header-absolute"
+  [mode]="'dark'"
+>
+  <app-horizontal-menu
+    [ulClassName]="'mx-auto'"
+    data-bs-theme="dark"
+    [showBuyNow]="true"
+    [docShow]="true"
+    [showSignUp]="true"
+  />
+</sticky-header-component>
+
+<main>
+  <service-single-hero />
+
+  <service-single-video-image />
+
+  <service-single-benefits />
+
+  <service-single-steps />
+
+  <service-single-pricing />
+
+  <service-single-cta />
+</main>
+
+<app-footer1 />

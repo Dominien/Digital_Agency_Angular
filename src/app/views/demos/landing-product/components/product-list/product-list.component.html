@@ -1,0 +1,72 @@
+<section>
+  <div class="container">
+    <div class="row g-4">
+      <!-- Title -->
+      <div class="col-md-4">
+        <h2 class="text-center text-md-start">
+          The perfect Airpods that suit you
+        </h2>
+        <!-- Slider arrow -->
+        <div
+          class="d-flex justify-content-center justify-content-md-start gap-3 position-relative mt-5 mt-md-6"
+        >
+          <a
+            href="javascript:void(0);"
+            class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-prev"
+            ><i class="bi bi-arrow-left"></i
+          ></a>
+          <a
+            href="javascript:void(0);"
+            class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-next"
+            ><i class="bi bi-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="col-md-8">
+        <!-- Slider START -->
+        <div class="swiper">
+          <!-- Slider items -->
+          <swiper-container
+            class="swiper-wrapper"
+            [config]="productList"
+            init="false"
+          >
+            <!-- Slider item -->
+            @for (item of productsData; track $index) {
+              <swiper-slide class="swiper-slide">
+                <div class="card bg-transparent text-center p-0">
+                  <!-- Image -->
+                  <img [src]="item.images" class="px-5" alt="product-img" />
+                  <div class="card-body p-0 mt-3">
+                    <!-- Title -->
+                    <h6 class="card-title mb-3">
+                      <a href="javascript:void(0);">{{ item.name }}</a>
+                    </h6>
+                    <!-- Price -->
+                    <div
+                      class="d-flex align-items-center justify-content-center mb-3"
+                    >
+                      <h6 class="fw-normal mb-0 me-1">{{ currency }}225</h6>
+                      <span class="text-decoration-line-through"
+                        >{{ currency }}{{ item.price }}</span
+                      >
+                    </div>
+                    <!-- Button -->
+                    <a
+                      href="javascript:void(0);"
+                      class="btn btn-sm btn-primary mb-0"
+                      >Buy now</a
+                    >
+                  </div>
+                </div>
+              </swiper-slide>
+            }
+          </swiper-container>
+        </div>
+        <!-- Slider END -->
+      </div>
+    </div>
+  </div>
+</section>

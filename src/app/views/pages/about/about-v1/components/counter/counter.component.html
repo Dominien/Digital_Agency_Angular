@@ -1,0 +1,25 @@
+<section class="pt-0">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+      <!-- Item -->
+      @for (item of statData; track $index) {
+        <div class="col">
+          <div class="bg-light border text-center rounded p-4">
+            <div class="d-flex justify-content-center">
+              <h4
+                class="purecounter mb-0"
+                data-purecounter-start="0"
+                [countUp]="item.stat"
+                data-purecounter-delay="300"
+              >
+                0
+              </h4>
+              <span class="h4 text-primary mb-0">{{ item.suffix }}</span>
+            </div>
+            <p class="text-center heading-color mb-0">{{ item.title }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<div ngbDropdown class="dropdown dropup text-center text-md-end mt-3 mt-md-0">
+  <a
+    ngbDropdownToggle
+    class="dropdown-toggle btn btn-sm btn-light mb-0"
+    href="javascript:void(0);"
+    role="button"
+    id="languageSwitcher"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    <i class="fas fa-globe me-2"></i>Language
+  </a>
+  <ul
+    ngbDropdownMenu
+    class="dropdown-menu min-w-auto"
+    aria-labelledby="languageSwitcher"
+  >
+    @for (data of languages; track $index) {
+      <li>
+        <a class="dropdown-item me-4" href="javascript:void(0);"
+          ><img class="fa-fw me-2" [src]="data.flag" alt="" />{{ data.name }}</a
+        >
+      </li>
+    }
+  </ul>
+</div>

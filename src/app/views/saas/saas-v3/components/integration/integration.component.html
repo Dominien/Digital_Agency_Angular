@@ -1,0 +1,61 @@
+<section class="pb-0">
+  <div class="container">
+    <!-- Title -->
+    <div class="inner-container-small text-center mb-4 mb-sm-5">
+      <h2 class="mb-4">Understanding of your website's impact</h2>
+      <p class="mb-4">
+        There is nothing that can stop you from achieving what you want, except
+        yourself. If you devote yourself to it you will achieve your goal.
+      </p>
+      <a routerLink="/saas/integrations" class="btn btn-dark mb-0"
+        >View all integrations</a
+      >
+    </div>
+
+    <!-- Image -->
+    <img src="assets/images/elements/integration-2.svg" class="mt-5" alt="" />
+
+    <!-- Feature -->
+    <div class="row justify-content-center g-sm-6 mt-6">
+      <!-- Feature item -->
+      @for (item of featuresData; track $index) {
+        <div class="col-sm-6 col-lg-4 mb-5 mb-sm-0">
+          <div class="card card-body text-center bg-transparent p-0">
+            <!-- Icon -->
+            <figure class="text-primary mb-4" [innerHTML]="item.sanitizedIcon">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.1 8.25C13.1 6.73122 14.3312 5.5 15.85 5.5C17.3688 5.5 18.6 6.73122 18.6 8.25C18.6 9.76878 17.3688 11 15.85 11C14.3312 11 13.1 9.76878 13.1 8.25Z"
+                  fill="currentColor"
+                  fill-opacity="0.25"
+                />
+                <path
+                  d="M21.5948 16.2194C21.4645 15.6034 21.3994 15.2953 21.3081 15.031C20.748 13.4092 19.3144 12.2471 17.6119 12.0346C17.3343 12 17.0195 12 16.3898 12H15.2359C14.5857 12 14.2606 12 13.9682 12.0385C12.4638 12.2365 11.1605 13.1794 10.5017 14.5463C10.3737 14.812 10.272 15.1207 10.0686 15.7383V15.7383C9.82585 16.4751 9.70449 16.8435 9.66869 17.1384C9.4797 18.6948 10.5211 20.1343 12.0585 20.4417C12.3498 20.5 12.7377 20.5 13.5134 20.5H18.1248C18.7369 20.5 19.043 20.5 19.2835 20.4607C20.7862 20.2149 21.8665 18.8823 21.796 17.3613C21.7848 17.1178 21.7214 16.8183 21.5948 16.2194V16.2194Z"
+                  fill="currentColor"
+                  fill-opacity="0.25"
+                />
+                <path
+                  d="M5.6 6.25C5.6 4.73122 6.83122 3.5 8.35 3.5C9.86878 3.5 11.1 4.73122 11.1 6.25C11.1 7.76878 9.86878 9 8.35 9C6.83122 9 5.6 7.76878 5.6 6.25Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M14.0948 14.2194C13.9645 13.6034 13.8994 13.2953 13.8081 13.031C13.248 11.4092 11.8144 10.2471 10.1119 10.0346C9.83431 10 9.51946 10 8.88976 10H7.73587C7.08569 10 6.7606 10 6.46821 10.0385C4.96381 10.2365 3.66052 11.1794 3.00174 12.5463C2.87371 12.812 2.77199 13.1207 2.56857 13.7383V13.7383C2.32585 14.4751 2.20449 14.8435 2.16869 15.1384C1.9797 16.6948 3.02108 18.1343 4.55849 18.4417C4.84977 18.5 5.23765 18.5 6.01343 18.5H10.6248C11.2369 18.5 11.543 18.5 11.7835 18.4607C13.2862 18.2149 14.3665 16.8823 14.296 15.3613C14.2848 15.1178 14.2214 14.8183 14.0948 14.2194V14.2194Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </figure>
+            <!-- Title -->
+            <h5 class="mb-3">{{ item.title }}</h5>
+            <p class="mb-0">{{ item.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

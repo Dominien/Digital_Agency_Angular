@@ -1,0 +1,61 @@
+<section class="pt-0">
+  <div class="container">
+    <div class="row">
+      <!-- Title -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h2>Meet Our Dedicated Team</h2>
+        <!-- Slider arrow -->
+        <div class="d-flex gap-3 position-relative mt-md-5">
+          <a
+            href="javascript:void(0);"
+            class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-prev-team"
+            ><i class="bi bi-arrow-left"></i
+          ></a>
+          <a
+            href="javascript:void(0);"
+            class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-next-team"
+            ><i class="bi bi-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <!-- Slider START -->
+        <div class="swiper mt-2 mt-md-4">
+          <swiper-container
+            [config]="swiperConfig"
+            init="false"
+            class="swiper-wrapper"
+          >
+            <!-- Team item -->
+            @for (data of teamData; track $index) {
+              <swiper-slide class="swiper-slide">
+                <div class="card card-img-scale bg-transparent overflow-hidden">
+                  <div class="card-img-scale-wrapper rounded-3">
+                    <!-- Card Image -->
+                    <img
+                      [src]="data.image"
+                      class="img-scale"
+                      alt="card image"
+                    />
+                  </div>
+                  <!-- Card body -->
+                  <div class="card-body text-center px-0 pb-0">
+                    <h6 class="mb-0">
+                      <a href="javascript:void(0);" class="stretched-link"
+                        >{{ data.firstName }} {{ data.lastName }}</a
+                      >
+                    </h6>
+                    <small>{{ data.role }}</small>
+                  </div>
+                </div>
+              </swiper-slide>
+            }
+          </swiper-container>
+        </div>
+        <!-- Slider END -->
+      </div>
+    </div>
+    <!-- Row END -->
+  </div>
+</section>

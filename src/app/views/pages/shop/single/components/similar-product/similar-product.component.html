@@ -1,0 +1,42 @@
+<section class="pt-0">
+  <div class="container">
+    <!-- Title -->
+    <div class="d-flex justify-content-between mb-5">
+      <h2 class="h4 mb-0">Similar products</h2>
+
+      <!-- Slider arrow -->
+      <div class="d-flex gap-1 gap-sm-3 d-xl-none">
+        <a
+          href="javascript:void(0);"
+          class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-prev"
+          ><i class="bi bi-arrow-left"></i
+        ></a>
+        <a
+          href="javascript:void(0);"
+          class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-next"
+          ><i class="bi bi-arrow-right"></i
+        ></a>
+      </div>
+    </div>
+
+    <!-- Slider START -->
+    <div
+      class="swiper"
+      data-swiper-options="{
+			}"
+    >
+      <swiper-container
+        [config]="swiperConfig"
+        init="false"
+        class="swiper-wrapper"
+      >
+        <!-- Slider items -->
+        @for (product of productList; track $index) {
+          <swiper-slide class="swiper-slide">
+            <product-card [product]="product" />
+          </swiper-slide>
+        }
+      </swiper-container>
+    </div>
+  </div>
+</section>

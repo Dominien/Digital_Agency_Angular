@@ -1,0 +1,250 @@
+<section>
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Title and content -->
+      <div class="col-lg-5 mb-5 mb-sm-0">
+        <h2 class="mb-4">Success stories in their own words</h2>
+        <p class="mb-4">
+          Read what our satisfied clients have to say about their experiences
+          with our platform.
+        </p>
+        <a
+          class="btn btn-lg btn-primary icon-link icon-link-hover mb-4 mb-lg-8"
+          routerLink="/customer/stories"
+          >View all reviews<i class="bi bi-arrow-right"></i>
+        </a>
+
+        <h6 class="mb-2">Trusted by 50K+ customers</h6>
+        <div class="d-flex">
+          <!-- Rating star -->
+          <ul class="list-inline">
+            <li class="list-inline-item small me-0">
+              <ng-template #t let-fill="fill">
+                <i class="fas fa-star">
+                  @if (fill > 0) {
+                    <i class="fas fa-star filled" [style.width.%]="fill"></i>
+                  }
+                </i>
+              </ng-template>
+              <ngb-rating
+                [rate]="4.5"
+                [starTemplate]="t"
+                [readonly]="true"
+                [max]="5"
+              />
+            </li>
+            <li class="list-inline-item heading-color fw-normal me-1">
+              4.4/5.0
+            </li>
+          </ul>
+          <span class="text-secondary mx-2 mx-sm-3">|</span>
+          <p class="mb-0">3,857 Reviews</p>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="col-lg-7 ps-xl-6">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <!-- Review item -->
+            <div class="card card-body card-hover-shadow border p-4 mb-4">
+              <!-- Star -->
+              <ul class="list-inline mb-5">
+                <li class="list-inline-item small me-0">
+                  <ng-template #t let-fill="fill">
+                    <i class="fas fa-star">
+                      @if (fill > 0) {
+                        <i
+                          class="fas fa-star filled"
+                          [style.width.%]="fill"
+                        ></i>
+                      }
+                    </i>
+                  </ng-template>
+                  <ngb-rating
+                    [rate]="4.5"
+                    [starTemplate]="t"
+                    [readonly]="true"
+                    [max]="5"
+                  />
+                </li>
+              </ul>
+
+              <!-- Content -->
+              <p class="heading-color mb-4">
+                "Frequently partiality possession resolution at or appearance
+                unaffected me. Ye goodness felicity do disposal dwelling no."
+              </p>
+
+              <!-- Avatar info -->
+              <div class="d-flex align-items-center">
+                <!-- Avatar -->
+                <div class="avatar flex-shrink-0">
+                  <img
+                    class="avatar-img rounded-circle"
+                    src="assets/images/avatar/05.jpg"
+                    alt="avatar"
+                  />
+                </div>
+                <!-- Info -->
+                <div class="ms-2">
+                  <h6 class="mb-0">Jacqueline Miller</h6>
+                  <p class="mb-0 small">Ceo of Blogzine</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review item -->
+            <div class="card card-body card-hover-shadow border p-4">
+              <!-- Star -->
+              <ul class="list-inline mb-5">
+                <li class="list-inline-item small me-0">
+                  <ng-template #t let-fill="fill">
+                    <i class="fas fa-star">
+                      @if (fill > 0) {
+                        <i
+                          class="fas fa-star filled"
+                          [style.width.%]="fill"
+                        ></i>
+                      }
+                    </i>
+                  </ng-template>
+                  <ngb-rating
+                    [rate]="4.5"
+                    [starTemplate]="t"
+                    [readonly]="true"
+                    [max]="5"
+                  />
+                </li>
+              </ul>
+
+              <!-- Content -->
+              <p class="heading-color mb-4">
+                "Was out laughter raptures returned outweigh. Luckily cheered
+                colonel I do we attack highest enabled. Tried law yet style
+                child. The bore of true of no be deal. "
+              </p>
+
+              <!-- Avatar info -->
+              <div class="d-flex align-items-center">
+                <!-- Avatar -->
+                <div class="avatar flex-shrink-0">
+                  <img
+                    class="avatar-img rounded-circle"
+                    src="assets/images/avatar/02.jpg"
+                    alt="avatar"
+                  />
+                </div>
+                <!-- Info -->
+                <div class="ms-2">
+                  <h6 class="mb-0">Emma Watson</h6>
+                  <p class="mb-0 small">Co-Founder</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mt-md-7">
+            <!-- Review item -->
+            <div class="card card-body card-hover-shadow border p-4 mb-4">
+              <!-- Star -->
+              <ul class="list-inline mb-5">
+                <li class="list-inline-item small me-0">
+                  <ng-template #t let-fill="fill">
+                    <i class="fas fa-star">
+                      @if (fill > 0) {
+                        <i
+                          class="fas fa-star filled"
+                          [style.width.%]="fill"
+                        ></i>
+                      }
+                    </i>
+                  </ng-template>
+                  <ngb-rating
+                    [rate]="4.5"
+                    [starTemplate]="t"
+                    [readonly]="true"
+                    [max]="5"
+                  />
+                </li>
+              </ul>
+
+              <!-- Content -->
+              <p class="heading-color mb-4">
+                "Two before narrow not relied on how except moment myself
+                Dejection assurance Mrs led certainly So gate at no only none
+                open Betrayed."
+              </p>
+
+              <!-- Avatar info -->
+              <div class="d-flex align-items-center">
+                <!-- Avatar -->
+                <div class="avatar flex-shrink-0">
+                  <img
+                    class="avatar-img rounded-circle"
+                    src="assets/images/avatar/04.jpg"
+                    alt="avatar"
+                  />
+                </div>
+                <!-- Info -->
+                <div class="ms-2">
+                  <h6 class="mb-0">Louis Ferguson</h6>
+                  <p class="mb-0 small">Web Developer</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review item -->
+            <div class="card card-body card-hover-shadow border p-4">
+              <!-- Star -->
+              <ul class="list-inline mb-5">
+                <li class="list-inline-item small me-0">
+                  <ng-template #t let-fill="fill">
+                    <i class="fas fa-star">
+                      @if (fill > 0) {
+                        <i
+                          class="fas fa-star filled"
+                          [style.width.%]="fill"
+                        ></i>
+                      }
+                    </i>
+                  </ng-template>
+                  <ngb-rating
+                    [rate]="4.5"
+                    [starTemplate]="t"
+                    [readonly]="true"
+                    [max]="5"
+                  />
+                </li>
+              </ul>
+
+              <!-- Content -->
+              <p class="heading-color mb-4">
+                "Our passion for customer excellence is just one reason why we
+                are the market leader. We've always worked very hard to give our
+                customers the best experience."
+              </p>
+
+              <!-- Avatar info -->
+              <div class="d-flex align-items-center">
+                <!-- Avatar -->
+                <div class="avatar flex-shrink-0">
+                  <img
+                    class="avatar-img rounded-circle"
+                    src="assets/images/avatar/06.jpg"
+                    alt="avatar"
+                  />
+                </div>
+                <!-- Info -->
+                <div class="ms-2">
+                  <h6 class="mb-0">Samuel Bishop</h6>
+                  <p class="mb-0 small">Product designer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

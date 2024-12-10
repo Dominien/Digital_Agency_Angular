@@ -1,0 +1,81 @@
+<section>
+  <div class="container">
+    <div class="row g-4">
+      <!-- Testimonials -->
+      <div class="col-lg-5">
+        <div class="card card-body bg-dark p-sm-5">
+          <!-- Quote icon -->
+          <span class="display-5 text-primary"
+            ><i class="bi bi-quote"></i
+          ></span>
+          <p class="text-white fs-5">
+            The sound quality is impressive for earbuds of this size. The audio
+            is clear, with balanced mids and highs. The bass isn't overpowering,
+            but it's adequate for most music genres.
+          </p>
+          <!-- Star -->
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item me-1">
+              <i class="bi bi-star-fill text-white fs-6"></i>
+            </li>
+            <li class="list-inline-item me-1">
+              <i class="bi bi-star-fill text-white fs-6"></i>
+            </li>
+            <li class="list-inline-item me-1">
+              <i class="bi bi-star-fill text-white fs-6"></i>
+            </li>
+            <li class="list-inline-item me-1">
+              <i class="bi bi-star-fill text-white fs-6"></i>
+            </li>
+            <li class="list-inline-item me-1">
+              <i class="bi bi-star-fill text-white fs-6"></i>
+            </li>
+          </ul>
+          <hr class="opacity-1 my-4" />
+          <!-- Divider -->
+
+          <!-- Avatar -->
+          <div class="d-sm-flex align-items-center">
+            <!-- Avatar -->
+            <div class="avatar flex-shrink-0">
+              <img
+                class="avatar-img rounded-circle"
+                src="assets/images/avatar/07.jpg"
+                alt="avatar"
+              />
+            </div>
+            <!-- Info -->
+            <div class="ms-sm-2 mt-2 mt-sm-0">
+              <h6 class="text-white mb-0">Dennis Barrett</h6>
+              <p class="mb-0 small text-white">CEO and co-founder, MacoInfo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact detail -->
+      <div class="col-lg-7 ps-lg-5">
+        <!-- Title -->
+        <h2 class="mb-4">Discover the Future of Sound with AirPods</h2>
+
+        <!-- Features -->
+        <div class="row g-4 g-lg-5">
+          @for (item of testimonialData; track $index) {
+            <div class="col-md-6">
+              <div class="card card-body bg-transparent p-0">
+                <div
+                  class="icon-md bg-primary bg-opacity-10 text-primary rounded mb-3"
+                >
+                  <i class="bi {{ item.icon }} fa-xl"></i>
+                </div>
+                <h6 class="mb-2">{{ item.title }}</h6>
+                <p class="mb-0">{{ item.description }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    <!-- Row END -->
+  </div>
+</section>

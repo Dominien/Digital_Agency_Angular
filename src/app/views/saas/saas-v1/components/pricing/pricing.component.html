@@ -1,0 +1,116 @@
+<section class="pt-0">
+  <div class="container">
+    <!-- Title -->
+    <div class="inner-container-small text-center mb-4 mb-sm-5">
+      <h2 class="mb-4">Discover our competitive plans</h2>
+      <p class="mb-0">
+        Your agency's success deserves a pricing strategy that aligns with your
+        goals. We offer a range of pricing plans crafted to meet your unique
+        needs.
+      </p>
+    </div>
+
+    <!-- Slider START -->
+    <div class="swiper">
+      <!-- Slider items -->
+      <swiper-container
+        class="swiper-wrapper"
+        [config]="pricingConfig"
+        init="false"
+      >
+        <!-- Slider item -->
+        @for (item of pricingData; track $index) {
+          @if (item.isPopular) {
+            <swiper-slide class="swiper-slide">
+              <!-- Pricing item -->
+              <div
+                class="card card-body bg-dark border rounded p-md-4"
+                data-bs-theme="dark"
+              >
+                <h6 class="mb-2 text-primary">{{ item.title }}</h6>
+                <!-- Price -->
+                <div class="d-flex align-items-center">
+                  <span class="h1 mb-0">{{ currency }}{{ item.price }}</span>
+                  <div class="ms-3">
+                    <p class="heading-color mb-0">Per user</p>
+                    <p class="heading-color mb-0">Per month</p>
+                  </div>
+                </div>
+                <span>Basic feature for up to 10 users</span>
+
+                <!-- Buttons -->
+                <a href="javascript:void(0);" class="btn btn-primary mt-4"
+                  >Get started</a
+                >
+                <a href="javascript:void(0);" class="btn btn-outline-white"
+                  >Chat to sales</a
+                >
+
+                <hr class="my-4" />
+                <!-- Divider -->
+
+                <h6 class="mb-0">Features</h6>
+                <span>Everything in basic plan and</span>
+
+                <!-- List -->
+                <ul class="list-group list-group-borderless border-0 mb-0 mt-2">
+                  @for (feature of item.features; track $index) {
+                    <li class="list-group-item d-flex mb-0">
+                      <i class="bi {{ feature.icon }} text-primary me-2"></i
+                      >{{ feature.title }}
+                    </li>
+                  }
+                </ul>
+              </div>
+            </swiper-slide>
+          } @else {
+            <swiper-slide class="swiper-slide">
+              <!-- Pricing item -->
+              <div class="card card-body border rounded p-md-4">
+                <h6 class="mb-2">{{ item.title }}</h6>
+                <!-- Price -->
+                <div class="d-flex align-items-center">
+                  <span class="h1 mb-0">{{ currency }}{{ item.price }}</span>
+                  <div class="ms-3">
+                    <p class="heading-color mb-0">Per user</p>
+                    <p class="heading-color mb-0">Per month</p>
+                  </div>
+                </div>
+                <span>Basic feature for up to 10 users</span>
+
+                <!-- Buttons -->
+                <a href="javascript:void(0);" class="btn btn-dark mt-4"
+                  >Get started</a
+                >
+                <a href="javascript:void(0);" class="btn btn-outline-light"
+                  >Chat to sales</a
+                >
+
+                <hr class="my-4" />
+                <!-- Divider -->
+
+                <h6 class="mb-0">Features</h6>
+                <span>Everything in basic plan</span>
+
+                <!-- List -->
+                <ul class="list-group list-group-borderless border-0 mb-0 mt-2">
+                  @for (data of item.features; track $index) {
+                    <li class="list-group-item d-flex mb-0">
+                      <i class="{{ data.icon }} text-primary me-2"></i
+                      >{{ data.title }}
+                    </li>
+                  }
+                </ul>
+              </div>
+            </swiper-slide>
+          }
+        }
+      </swiper-container>
+
+      <!-- Slider Pagination -->
+      <div
+        class="swiper-pagination swiper-pagination-primary position-relative mt-4"
+      ></div>
+    </div>
+  </div>
+</section>

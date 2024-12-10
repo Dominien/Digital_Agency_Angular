@@ -1,0 +1,98 @@
+<section>
+  <div class="container">
+    <!-- Testimonials START -->
+    <div class="row position-relative mb-6 mb-sm-8">
+      <div class="col-md-10 mx-auto text-center">
+        <!-- Slider START -->
+        <div class="swiper mt-2 mt-md-4">
+          <swiper-container
+            class="swiper-wrapper"
+            [config]="swiperConfig"
+            init="false"
+          >
+            <!-- Testimonial item -->
+            @for (item of testimonials; track $index) {
+              <swiper-slide class="swiper-slide">
+                <!-- Image -->
+                <div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-4">
+                  <img
+                    class="avatar-img rounded-circle"
+                    [src]="item.user.avatar"
+                    alt="avatar"
+                  />
+                </div>
+                <!-- Review -->
+                <p class="heading-color fs-4 fw-normal mb-4">
+                  "{{ item.comment }}"
+                </p>
+
+                <!-- Rating star -->
+                <ul class="list-inline mb-4">
+                  <li class="list-inline-item fs-6 me-1">
+                    <i class="fas fa-star text-primary"></i>
+                  </li>
+                  <li class="list-inline-item fs-6 me-1">
+                    <i class="fas fa-star text-primary"></i>
+                  </li>
+                  <li class="list-inline-item fs-6 me-1">
+                    <i class="fas fa-star text-primary"></i>
+                  </li>
+                  <li class="list-inline-item fs-6 me-1">
+                    <i class="fas fa-star text-primary"></i>
+                  </li>
+                  <li class="list-inline-item fs-6 me-1">
+                    <i class="fas fa-star-half-alt text-primary"></i>
+                  </li>
+                </ul>
+
+                <!-- Name -->
+                <div
+                  class="d-flex gap-2 align-items-center justify-content-center flex-wrap"
+                >
+                  <h5 class="mb-0">
+                    {{ item.user.firstName }} {{ item.user.lastName }}
+                  </h5>
+                  <div class="vr"></div>
+                  <p class="mb-0">{{ item.user.role }}</p>
+                </div>
+              </swiper-slide>
+            }
+          </swiper-container>
+        </div>
+        <!-- Slider END -->
+      </div>
+
+      <!-- Add pagination and navigation elements here -->
+      <div
+        class="d-flex justify-content-between position-absolute top-50 start-0 w-100"
+      >
+        <a
+          href="javascript:void(0);"
+          class="btn btn-light border previous btn-icon btn-lg rounded-circle mb-0 swiper-button-prev"
+          ><i class="bi bi-arrow-left"></i
+        ></a>
+        <a
+          href="javascript:void(0);"
+          class="btn next btn-light border btn-icon btn-lg rounded-circle mb-0 swiper-button-next"
+          ><i class="bi bi-arrow-right"></i
+        ></a>
+      </div>
+    </div>
+    <!-- Testimonials END -->
+
+    <!-- Counter START -->
+    <div class="row g-4 g-lg-6">
+      @for (item of statData; track $index) {
+        <div class="col-sm-6 col-md-3">
+          <h6 class="mb-0">{{ item.title }}</h6>
+          <hr class="border-primary opacity-3 my-3 my-sm-4" />
+          <h5 class="display-6">
+            {{ item.stat }}<span class="text-primary">{{ item.suffix }}</span>
+          </h5>
+          <p>{{ item.description }}</p>
+        </div>
+      }
+    </div>
+    <!-- Counter END -->
+  </div>
+</section>
